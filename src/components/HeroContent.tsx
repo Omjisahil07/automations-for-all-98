@@ -125,22 +125,14 @@ export const HeroContent = () => {
 
         {/* CTA Section */}
         <div className="space-y-4 md:space-y-6">
-          <div className="flex flex-col gap-4 md:gap-6 justify-center items-center">
-            <Button
-              variant="cta"
-              size="lg"
-              className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-2xl group hover-lift shadow-neural w-full sm:w-auto"
-            >
-              Start Your AI Journey Today
-            </Button>
-
+          <div className="flex gap-4 md:gap-6 justify-center items-center">
             <MovingButton
               borderRadius="1.75rem"
-              width="16rem"
+              width="22rem"
               height="2rem"
               className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-2xl glass-card  w-full sm:w-auto"
             >
-              View Success Stories
+              Start Your AI Journey Today
             </MovingButton>
           </div>
 
