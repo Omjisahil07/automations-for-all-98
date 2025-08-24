@@ -75,7 +75,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden">
       <div className="absolute inset-0 "></div>
 
       {/* Animated Pricing Background */}
@@ -101,11 +101,11 @@ const Pricing = () => {
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-heading font-black mb-4 leading-tight">
+          <h2 className="text-5xl md:text-7xl font-heading font-black mb-8 leading-tight">
             Choose Your Path to Becoming an{" "}
             <span className="text-shimmer">Automation Pro</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground font-light max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-4xl mx-auto">
             Whether you want to start fast, go deep, or learn on your own
             schedule, there's a path designed for your goals.
           </p>
@@ -149,20 +149,20 @@ const Pricing = () => {
                       <path.icon className="w-10 h-10 text-white" />
                     </div>
 
-                    <h3 className="text-2xl font-heading font-bold mb-2">
+                    <h3 className="text-3xl font-heading font-bold mb-2">
                       {path.title}
                     </h3>
-                    <p className="text-base text-muted-foreground mb-4">
+                    <p className="text-lg text-muted-foreground mb-4">
                       {path.subtitle}
                     </p>
 
                     {/* Pricing */}
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center justify-center space-x-4">
-                        <span className="text-3xl font-heading font-black gradient-hero bg-clip-text text-transparent">
+                        <span className="text-5xl font-heading font-black gradient-hero bg-clip-text text-transparent">
                           {path.price}
                         </span>
-                        <span className="text-lg text-muted-foreground line-through">
+                        <span className="text-2xl text-muted-foreground line-through">
                           {path.originalPrice}
                         </span>
                       </div>
@@ -218,7 +218,7 @@ const Pricing = () => {
                     </p>
                     <Button
                       variant={path.popular ? "hero" : "cta"}
-                      className="w-full rounded-2xl py-4 text-base font-bold shadow-luxury hover:shadow-glow"
+                      className="w-full rounded-2xl py-4 text-lg font-bold shadow-luxury hover:shadow-glow"
                       size="default"
                     >
                       Choose This Path
@@ -236,7 +236,7 @@ const Pricing = () => {
             <Button
               variant="hero"
               size="lg"
-              className="text-xl px-12 py-6 rounded-2xl mb-6 shadow-luxury hover:shadow-glow"
+              className="text-2xl px-12 py-6 rounded-2xl mb-6 shadow-luxury hover:shadow-glow"
             >
               🔥 Start My AI Journey Today
             </Button>

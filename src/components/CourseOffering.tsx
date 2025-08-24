@@ -8,10 +8,10 @@ const CourseOffering = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-24">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             What's Inside Automation School™
           </h2>
         </div>
@@ -22,13 +22,13 @@ const CourseOffering = () => {
               <div className="w-8 h-8 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-1">
                 <span className="text-white font-bold text-sm">✓</span>
               </div>
-              <p className="text-base">{feature}</p>
+              <p className="text-lg">{feature}</p>
             </div>
           ))}
         </div>
         
         <div className="text-center">
-          <p className="text-lg font-semibold text-muted-foreground">
+          <p className="text-xl font-semibold text-muted-foreground">
             This is more than learning. This is{" "}
             <span className="gradient-accent bg-clip-text text-transparent">transformation</span>.
           </p>

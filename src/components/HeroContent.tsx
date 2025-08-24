@@ -87,13 +87,13 @@ const AnimatedCounter = ({
 
 export const HeroContent = () => {
   return (
-    <div className="relative z-10 container mx-auto px-4 py-12">
-      <div className="text-center space-y-6 max-w-4xl mx-auto">
+    <div className="relative z-10 container mx-auto px-4 py-32">
+      <div className="text-center space-y-6 max-w-8xl mx-auto">
         {/* Pre-headline */}
-        <div className="mb-3 scroll-reveal">
+        <div className="mb-6 scroll-reveal">
           <div className="inline-flex items-center space-x-2 px-8 py-4 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury">
             <Sparkles className="w-5 h-5 text-accent animate-pulse-glow" />
-            <span className="text-small font-medium text-shimmer">
+            <span className="text-lg font-medium text-shimmer">
               From Beginner to In-Demand in Just 30 Days
             </span>
             <Sparkles className="w-5 h-5 text-accent animate-pulse-glow" />
@@ -102,18 +102,18 @@ export const HeroContent = () => {
 
         {/* Main Headline */}
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-display font-black mb-4 leading-tight tracking-tight">
+          <h1 className="text-6xl md:text-8xl font-display font-black mb-8 leading-tight tracking-tight">
             Build & Sell{" "}
             <span className="relative inline-block">
               <span className="text-shimmer">AI Automations</span>
               <div className="absolute -bottom-2 left-0 right-0 h-1 gradient-hero rounded-full transform scale-x-0 animate-[scale-in_1s_ease-out_0.5s_forwards]"></div>
             </span>
             ,<br />
-            <span className="text-3xl md:text-4xl text-muted-foreground font-normal">
+            <span className="text-5xl md:text-6xl text-muted-foreground font-normal">
               Even If You're Not Technical
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-5xl mx-auto font-light">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-5xl mx-auto font-light">
             Learn to create{" "}
             <span className="font-semibold gradient-primary bg-clip-text text-transparent">
               Client-Ready AI Systems™
@@ -129,7 +129,7 @@ export const HeroContent = () => {
             <Button
               variant="cta"
               size="lg"
-              className="text-lg px-8 py-4 rounded-2xl group hover-lift shadow-neural"
+              className="text-xl px-8 py-4 rounded-2xl group hover-lift shadow-neural"
             >
               Start Your AI Journey Today
             </Button>
@@ -137,7 +137,7 @@ export const HeroContent = () => {
             <Button
               variant="outline"
               size="lg"
-              className="text-lg px-8 py-4 rounded-2xl glass-card hover-lift"
+              className="text-xl px-8 py-4 rounded-2xl glass-card hover-lift"
             >
               View Success Stories
             </Button>
@@ -154,19 +154,19 @@ export const HeroContent = () => {
               <div className="text-3xl md:text-4xl font-bold text-gradient-primary">
                 <AnimatedCounter target={10000} suffix="+" />
               </div>
-              <p className="text-muted-foreground">Students Trained</p>
+              <p className="text-sm text-muted-foreground">Students Trained</p>
             </div>
             <div className="space-y-2">
               <div className="text-3xl md:text-4xl font-bold text-gradient-primary">
                 <AnimatedCounter target={95} suffix="%" />
               </div>
-              <p className="text-muted-foreground">Success Rate</p>
+              <p className="text-sm text-muted-foreground">Success Rate</p>
             </div>
             <div className="space-y-2">
               <div className="text-3xl md:text-4xl font-bold text-gradient-primary">
                 <AnimatedCounter target={500} suffix="+" />
               </div>
-              <p className="text-muted-foreground">AI Automations Built</p>
+              <p className="text-sm text-muted-foreground">AI Automations Built</p>
             </div>
           </div>
         </div>

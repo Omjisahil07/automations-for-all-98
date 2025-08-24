@@ -32,7 +32,7 @@ const TargetAudience = () => {
   ];
 
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-background/10"></div>
       
       {/* Animated Background Grid */}

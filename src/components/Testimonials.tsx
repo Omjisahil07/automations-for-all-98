@@ -33,7 +33,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden">
       <div className="absolute "></div>
       
       {/* Floating testimonial bubbles */}
@@ -73,7 +73,7 @@ const Testimonials = () => {
                   </div>
                   
                   {/* Quote */}
-                  <blockquote className="text-lg font-medium mb-6 leading-relaxed">
+                  <blockquote className="text-xl font-medium mb-6 leading-relaxed">
                     "{testimonial.quote}"
                   </blockquote>
                   
