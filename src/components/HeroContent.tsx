@@ -136,7 +136,7 @@ export const HeroContent = () => {
             </MovingButton>
           </div>
 
-          <div className="flex flex-row items-center justify-center mb-6 md:mb-10 w-full overflow-hidden">
+          <div className="flex flex-row items-center justify-center mb-6 md:mb-10 w-full ">
             <AnimatedTooltip items={students} />
           </div>
 
