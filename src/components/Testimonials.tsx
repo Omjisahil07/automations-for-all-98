@@ -34,7 +34,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 gradient-subtle"></div>
+      <div className="absolute "></div>
       
       {/* Floating testimonial bubbles */}
       <div className="absolute top-1/4 left-10 w-6 h-6 rounded-full gradient-primary opacity-30 floating-element"></div>

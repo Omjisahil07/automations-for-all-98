@@ -15,7 +15,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground relative">
       {/* Site-wide Matrix Background */}
       <MatrixBackground />
-      
+
       {/* All content sections with relative z-index */}
       <div className="relative z-20">
         <Hero />
@@ -24,8 +24,9 @@ const Index = () => {
         <Problem />
         <Solution />
         <Testimonials />
-        <CourseOffering />
+
         <Pricing />
+        <CourseOffering />
         <Founder />
         <FinalCTA />
       </div>

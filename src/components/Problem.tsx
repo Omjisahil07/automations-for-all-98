@@ -90,18 +90,16 @@ const Problem = () => {
         </div>
         
         <div className="text-center scroll-reveal">
-          <div className="glass-card rounded-3xl p-16 max-w-5xl mx-auto backdrop-blur-xl border border-success/20 shadow-luxury">
+          <div className="glass-card rounded-3xl p-16 max-w-5xl mx-auto backdrop-blur-xl border-green-400 border-success/20 shadow-luxury">
             <div className="flex items-center justify-center space-x-4 mb-6">
-              <CheckCircle className="w-12 h-12 text-success animate-pulse-glow" />
-              <div className="w-16 h-1 bg-success rounded-full"></div>
-              <CheckCircle className="w-12 h-12 text-success animate-pulse-glow" />
+              <CheckCircle className="w-12 h-12 text-green-500" />
             </div>
             <p className="text-3xl md:text-4xl font-heading font-bold leading-tight">
               👉 The truth?{" "}
               <span className="text-muted-foreground">You don't need more tools.</span>
               <br />
               You need a{" "}
-              <span className="gradient-hero bg-clip-text text-transparent">
+              <span className=" text-green-600">
                 system
               </span>
               .

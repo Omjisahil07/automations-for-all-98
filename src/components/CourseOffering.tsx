@@ -8,7 +8,7 @@ const CourseOffering = () => {
   ];
 
   return (
-    <section className="py-24 gradient-subtle">
+    <section className="py-24">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">

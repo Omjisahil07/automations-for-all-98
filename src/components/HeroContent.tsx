@@ -1,41 +1,107 @@
 import { Button } from "@/components/ui/button";
-import { useScrollReveal, useMouseMove } from "@/hooks/useAnimations";
+import { useState, useEffect } from "react";
 import { ArrowRight, Sparkles, Zap, Target } from "lucide-react";
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 
-export const HeroContent = () => {
-  useScrollReveal();
-  const mousePosition = useMouseMove();
+const students = [
+  {
+    id: 1,
+    name: "Ravi Kumar",
+    designation: "AI Automation Expert",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+  },
+  {
+    id: 2,
+    name: "Priya Sharma",
+    designation: "Freelance Developer",
+    image:
+      "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+  },
+  {
+    id: 3,
+    name: "Arjun Patel",
+    designation: "Agency Owner",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+  },
+  {
+    id: 4,
+    name: "Sneha Gupta",
+    designation: "Marketing Director",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  },
+  {
+    id: 5,
+    name: "Vikash Singh",
+    designation: "Tech Consultant",
+    image:
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+  },
+  {
+    id: 6,
+    name: "Meera Joshi",
+    designation: "Business Analyst",
+    image:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+  },
+];
+
+const AnimatedCounter = ({
+  target,
+  suffix = "",
+}: {
+  target: number;
+  suffix?: string;
+}) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const duration = 2000;
+    const steps = 60;
+    const increment = target / steps;
+    const stepDuration = duration / steps;
+
+    let currentCount = 0;
+    const timer = setInterval(() => {
+      currentCount += increment;
+      if (currentCount >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(currentCount));
+      }
+    }, stepDuration);
+
+    return () => clearInterval(timer);
+  }, [target]);
 
   return (
-    <div className="relative z-20 min-h-screen flex items-center justify-center">
-      {/* Dynamic Mouse-Following Gradient */}
-      <div 
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, hsl(var(--primary) / 0.15), transparent 40%)`
-        }}
-      ></div>
-      
-      {/* Floating Elements */}
-      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full floating-element opacity-60"></div>
-      <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-accent rounded-full floating-element opacity-40" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-1/3 left-1/6 w-4 h-4 bg-primary/30 rounded-full floating-element" style={{ animationDelay: '2s' }}></div>
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center max-w-7xl">
+    <span>
+      {count.toLocaleString()}
+      {suffix}
+    </span>
+  );
+};
+
+export const HeroContent = () => {
+  return (
+    <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="text-center space-y-8 max-w-4xl mx-auto">
         {/* Pre-headline */}
-        <div className="mb-8 scroll-reveal">
+        <div className="mb-3 scroll-reveal">
           <div className="inline-flex items-center space-x-2 px-8 py-4 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury">
             <Sparkles className="w-5 h-5 text-accent animate-pulse-glow" />
-            <span className="text-lg font-medium text-shimmer">
+            <span className="text-small font-medium text-shimmer">
               From Beginner to In-Demand in Just 30 Days
             </span>
             <Sparkles className="w-5 h-5 text-accent animate-pulse-glow" />
           </div>
         </div>
-        
+
         {/* Main Headline */}
-        <div className="mb-10 scroll-reveal">
+        <div className="space-y-6">
           <h1 className="text-6xl md:text-8xl font-display font-black mb-6 leading-tight tracking-tight">
             Build & Sell{" "}
             <span className="relative inline-block">
@@ -47,66 +113,65 @@ export const HeroContent = () => {
               Even If You're Not Technical
             </span>
           </h1>
-        </div>
-        
-        {/* Subheadline */}
-        <div className="mb-16 scroll-reveal">
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-5xl mx-auto font-light">
             Learn to create{" "}
             <span className="font-semibold gradient-primary bg-clip-text text-transparent">
               Client-Ready AI Systems™
             </span>{" "}
-            that businesses pay for, package them as services, and charge premium rates with confidence.
+            that businesses pay for, package them as services, and charge
+            premium rates with confidence.
           </p>
         </div>
-        
+
         {/* CTA Section */}
-        <div className="scroll-reveal space-y-8">
+        <div className="space-y-8">
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button 
-              variant="cta" 
-              size="xl" 
+            <Button
+              variant="cta"
+              size="xl"
               className="text-xl px-12 py-6 rounded-2xl group hover-lift shadow-neural"
             >
-              <Zap className="w-6 h-6 mr-3 group-hover:animate-pulse-glow" />
               Start Your AI Journey Today
-              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
             </Button>
-            
-            <Button 
-              variant="outline" 
-              size="xl" 
+
+            <Button
+              variant="outline"
+              size="xl"
               className="text-xl px-12 py-6 rounded-2xl glass-card hover-lift"
             >
-              <Target className="w-6 h-6 mr-3" />
               View Success Stories
             </Button>
           </div>
-          
-          {/* Trust Indicators */}
-          <div className="glass-card rounded-2xl p-8 max-w-2xl mx-auto backdrop-blur-xl">
-            <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 text-sm">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-success rounded-full animate-pulse-glow"></div>
-                <span className="font-medium">1,000+ Learners</span>
+
+          <div className="flex flex-row items-center justify-center mb-10 w-full">
+            <AnimatedTooltip items={students} />
+          </div>
+
+        
+          {/* Counters / Social Proof */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center pt-8">
+            <div className="space-y-2">
+              <div className="text-3xl md:text-4xl font-bold text-gradient-primary">
+                <AnimatedCounter target={10000} suffix="+" />
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-accent rounded-full animate-pulse-glow"></div>
-                <span className="font-medium">Beginner-Friendly</span>
+              <p className="text-muted-foreground">Students Trained</p>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl md:text-4xl font-bold text-gradient-primary">
+                <AnimatedCounter target={95} suffix="%" />
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-primary rounded-full animate-pulse-glow"></div>
-                <span className="font-medium">Results-Driven</span>
+              <p className="text-muted-foreground">Success Rate</p>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl md:text-4xl font-bold text-gradient-primary">
+                <AnimatedCounter target={500} suffix="+" />
               </div>
+              <p className="text-muted-foreground">AI Automations Built</p>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Decorative Gradient Orbs */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-full gradient-primary opacity-20 blur-xl floating-element"></div>
-      <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full gradient-accent opacity-20 blur-xl floating-element" style={{ animationDelay: '1.5s' }}></div>
-      <div className="absolute top-1/2 left-20 w-24 h-24 rounded-full gradient-hero opacity-10 blur-xl floating-element" style={{ animationDelay: '3s' }}></div>
     </div>
   );
 };
+
