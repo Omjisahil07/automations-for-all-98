@@ -18,10 +18,11 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				sans: ['Poppins', 'sans-serif'],
-				heading: ['Space Grotesk', 'sans-serif'],
-			},
+		fontFamily: {
+			sans: ['Inter', 'sans-serif'],
+			heading: ['Orbitron', 'sans-serif'],
+			mono: ['JetBrains Mono', 'monospace'],
+		},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

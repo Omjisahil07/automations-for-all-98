@@ -1,28 +1,25 @@
 import { Button } from "@/components/ui/button";
-import { useScrollReveal, useParallax, useMouseMove } from "@/hooks/useAnimations";
-import heroImage from "@/assets/hero-automation.jpg";
+import { useScrollReveal, useMouseMove } from "@/hooks/useAnimations";
+import { MatrixBackground } from "@/components/MatrixBackground";
 import { ArrowRight, Sparkles, Zap, Target } from "lucide-react";
 
 const Hero = () => {
   useScrollReveal();
-  useParallax();
   const mousePosition = useMouseMove();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
+      {/* Matrix Background */}
+      <MatrixBackground />
+      
+      {/* Neural Network Gradient Overlay */}
       <div className="absolute inset-0 gradient-mesh"></div>
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5 parallax-element"
-        data-speed="0.3"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      ></div>
       
       {/* Dynamic Mouse-Following Gradient */}
       <div 
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none z-10"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.15), transparent 40%)`
+          background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, hsl(var(--primary) / 0.15), transparent 40%)`
         }}
       ></div>
       
@@ -32,7 +29,7 @@ const Hero = () => {
       <div className="absolute bottom-1/3 left-1/6 w-4 h-4 bg-primary/30 rounded-full floating-element" style={{ animationDelay: '2s' }}></div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center max-w-7xl">
+      <div className="relative z-20 container mx-auto px-4 text-center max-w-7xl">
         {/* Pre-headline */}
         <div className="mb-8 scroll-reveal">
           <div className="inline-flex items-center space-x-2 px-8 py-4 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury">
@@ -74,9 +71,9 @@ const Hero = () => {
         <div className="scroll-reveal space-y-8">
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
-              variant="hero" 
+              variant="cta" 
               size="xl" 
-              className="text-xl px-12 py-6 rounded-2xl group hover-lift shadow-luxury"
+              className="text-xl px-12 py-6 rounded-2xl group hover-lift shadow-neural"
             >
               <Zap className="w-6 h-6 mr-3 group-hover:animate-pulse-glow" />
               Start Your AI Journey Today
@@ -86,7 +83,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="xl" 
-              className="text-xl px-12 py-6 rounded-2xl glass-card border-white/20 hover:border-primary/40 hover-lift"
+              className="text-xl px-12 py-6 rounded-2xl glass-card hover-lift"
             >
               <Target className="w-6 h-6 mr-3" />
               View Success Stories
