@@ -69,6 +69,12 @@ All colors MUST be HSL.
     --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --transition-luxury: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 
+    /* Matrix Background Colors */
+    --matrix-bg-overlay: 15 23% 4%;
+    --matrix-text-primary: 217 91% 60%;
+    --matrix-text-secondary: 188 95% 43%;
+    --matrix-text-accent: 224 76% 48%;
+
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
