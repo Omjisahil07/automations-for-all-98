@@ -46,10 +46,10 @@ export const CleanMinimal = () => {
   return (
     <section className="relative min-h-screen gradient-subtle overflow-hidden">
       {/* Clean Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/30 via-background/20 to-background/10" />
       
       {/* Floating Geometric Shapes */}
-      <div className="absolute inset-0 z-10">
+      <div className="absolute inset-0 z-20">
         <FloatingShape 
           shape="cube" 
           size="w-16 h-16" 
@@ -101,7 +101,7 @@ export const CleanMinimal = () => {
       </div>
 
       {/* Subtle Grid Overlay */}
-      <div className="absolute inset-0 opacity-5 z-10">
+      <div className="absolute inset-0 opacity-2 z-20">
         <div 
           className="w-full h-full"
           style={{
@@ -115,8 +115,8 @@ export const CleanMinimal = () => {
       </div>
 
       {/* Subtle Glow Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl animate-pulse z-10" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-pulse z-20" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/3 rounded-full blur-3xl animate-pulse z-20" style={{ animationDelay: "2s" }} />
       
       <HeroContent />
     </section>
