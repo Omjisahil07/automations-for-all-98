@@ -6,7 +6,7 @@ const NewEra = () => {
 
   return (
     <section className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 gradient-subtle"></div>
+      <div className="absolute inset-0 bg-background/5"></div>
       
       {/* Floating Background Elements */}
       <div className="absolute top-20 left-1/4 w-64 h-64 rounded-full gradient-primary opacity-5 blur-3xl floating-element"></div>

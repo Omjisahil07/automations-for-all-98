@@ -21,7 +21,7 @@ const Problem = () => {
 
   return (
     <section className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 gradient-subtle"></div>
+      <div className="absolute inset-0 bg-background/5"></div>
       
       {/* Animated noise pattern */}
       <div className="absolute inset-0 opacity-5">
