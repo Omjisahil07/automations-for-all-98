@@ -1,17 +1,17 @@
 const Solution = () => {
   return (
-    <section className="py-24">
+    <section className="py-16">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
             The Client-Ready AI System™
           </h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
             At Automation School™, you'll master a framework built to turn skills into income.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div className="bg-card p-6 rounded-xl shadow-elegant text-center">
             <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
               1

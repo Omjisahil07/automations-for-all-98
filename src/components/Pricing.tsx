@@ -75,7 +75,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       <div className="absolute inset-0 "></div>
 
       {/* Animated Pricing Background */}
@@ -93,7 +93,7 @@ const Pricing = () => {
       </div>
 
       <div className="container mx-auto px-4 max-w-8xl relative z-10">
-        <div className="text-center mb-20 scroll-reveal">
+        <div className="text-center mb-12 scroll-reveal">
           <div className="inline-flex items-center space-x-2 px-6 py-3 rounded-full glass-card backdrop-blur-xl border border-primary/20 mb-8">
             <Trophy className="w-5 h-5 text-primary animate-pulse-glow" />
             <span className="text-sm font-medium text-primary">
@@ -101,17 +101,17 @@ const Pricing = () => {
             </span>
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-heading font-black mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-heading font-black mb-4 leading-tight">
             Choose Your Path to Becoming an{" "}
             <span className="text-shimmer">Automation Pro</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-4xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground font-light max-w-4xl mx-auto">
             Whether you want to start fast, go deep, or learn on your own
             schedule, there's a path designed for your goals.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {paths.map((path, index) => (
             <div
               key={index}
@@ -140,7 +140,7 @@ const Pricing = () => {
                   className={`absolute top-0 right-0 w-40 h-40 ${path.gradient} opacity-5 rounded-full blur-3xl`}
                 ></div>
 
-                <div className="relative z-10 p-10">
+                <div className="relative z-10 p-6">
                   {/* Header */}
                   <div className="text-center mb-8">
                     <div
@@ -149,20 +149,20 @@ const Pricing = () => {
                       <path.icon className="w-10 h-10 text-white" />
                     </div>
 
-                    <h3 className="text-3xl font-heading font-bold mb-2">
+                    <h3 className="text-2xl font-heading font-bold mb-2">
                       {path.title}
                     </h3>
-                    <p className="text-lg text-muted-foreground mb-6">
+                    <p className="text-base text-muted-foreground mb-4">
                       {path.subtitle}
                     </p>
 
                     {/* Pricing */}
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-2 mb-4">
                       <div className="flex items-center justify-center space-x-4">
-                        <span className="text-5xl font-heading font-black gradient-hero bg-clip-text text-transparent">
+                        <span className="text-3xl font-heading font-black gradient-hero bg-clip-text text-transparent">
                           {path.price}
                         </span>
-                        <span className="text-2xl text-muted-foreground line-through">
+                        <span className="text-lg text-muted-foreground line-through">
                           {path.originalPrice}
                         </span>
                       </div>
@@ -176,32 +176,32 @@ const Pricing = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="space-y-6 mb-8">
-                    <div className="glass-card p-6 rounded-2xl border border-accent/10">
-                      <p className="font-semibold text-sm text-accent mb-2">
+                  <div className="space-y-4 mb-6">
+                    <div className="glass-card p-4 rounded-2xl border border-accent/10">
+                      <p className="font-semibold text-xs text-accent mb-1">
                         THE PROMISE:
                       </p>
-                      <p className="text-sm leading-relaxed">{path.promise}</p>
+                      <p className="text-xs leading-relaxed">{path.promise}</p>
                     </div>
 
-                    <div className=" p-6 rounded-2xl border border-primary/10">
-                      <p className="font-semibold text-sm text-primary mb-2">
+                    <div className=" p-4 rounded-2xl border border-primary/10">
+                      <p className="font-semibold text-xs text-primary mb-1">
                         BEST FOR:
                       </p>
-                      <p className="text-sm leading-relaxed">{path.bestFor}</p>
+                      <p className="text-xs leading-relaxed">{path.bestFor}</p>
                     </div>
 
                     <div>
-                      <p className="font-semibold text-sm text-muted-foreground mb-4">
+                      <p className="font-semibold text-xs text-muted-foreground mb-3">
                         WHAT YOU GET:
                       </p>
-                      <ul className="space-y-3">
+                      <ul className="space-y-2">
                         {path.features.map((feature, featureIndex) => (
                           <li
                             key={featureIndex}
                             className="flex items-start space-x-3 text-sm"
                           >
-                            <div className="w-6 h-6 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <div className="w-4 h-4 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                               <span className="text-white text-xs">✓</span>
                             </div>
                             <span className="leading-relaxed">{feature}</span>
@@ -212,14 +212,14 @@ const Pricing = () => {
                   </div>
 
                   {/* CTA Section */}
-                  <div className="border-t border-border/50 pt-8">
-                    <p className="text-sm font-medium text-center mb-6 gradient-accent bg-clip-text text-transparent">
+                  <div className="border-t border-border/50 pt-4">
+                    <p className="text-xs font-medium text-center mb-4 gradient-accent bg-clip-text text-transparent">
                       {path.cta}
                     </p>
                     <Button
                       variant={path.popular ? "hero" : "cta"}
-                      className="w-full rounded-2xl py-6 text-lg font-bold shadow-luxury hover:shadow-glow"
-                      size="lg"
+                      className="w-full rounded-2xl py-4 text-base font-bold shadow-luxury hover:shadow-glow"
+                      size="default"
                     >
                       Choose This Path
                     </Button>
@@ -232,11 +232,11 @@ const Pricing = () => {
 
         {/* Final CTA */}
         <div className="text-center scroll-reveal">
-          <div className="glass-card rounded-3xl p-16 max-w-4xl mx-auto backdrop-blur-xl border border-primary/20 shadow-luxury">
+          <div className="glass-card rounded-3xl p-8 max-w-4xl mx-auto backdrop-blur-xl border border-primary/20 shadow-luxury">
             <Button
               variant="hero"
-              size="xl"
-              className="text-2xl px-16 py-8 rounded-2xl mb-8 shadow-luxury hover:shadow-glow"
+              size="lg"
+              className="text-xl px-12 py-6 rounded-2xl mb-6 shadow-luxury hover:shadow-glow"
             >
               🔥 Start My AI Journey Today
             </Button>

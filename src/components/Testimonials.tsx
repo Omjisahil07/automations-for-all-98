@@ -33,7 +33,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       <div className="absolute "></div>
       
       {/* Floating testimonial bubbles */}
@@ -42,22 +42,22 @@ const Testimonials = () => {
       <div className="absolute bottom-1/4 left-1/4 w-5 h-5 rounded-full gradient-hero opacity-35 floating-element" style={{ animationDelay: '2s' }}></div>
       
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-20 scroll-reveal">
+        <div className="text-center mb-12 scroll-reveal">
           <div className="inline-flex items-center space-x-2 px-6 py-3 rounded-full glass-card backdrop-blur-xl border border-accent/20 mb-8">
             <MessageSquare className="w-5 h-5 text-accent animate-pulse-glow" />
             <span className="text-sm font-medium text-accent">STUDENT SUCCESS</span>
           </div>
           
-          <h2 className="text-5xl md:text-7xl font-heading font-black mb-8 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-heading font-black mb-6 leading-tight">
             Stories of Our{" "}
             <span className="text-shimmer">Students.</span>
           </h2>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="scroll-reveal group" style={{ animationDelay: `${index * 0.2}s` }}>
-              <div className="glass-card p-10 rounded-3xl hover-lift transition-luxury h-full relative overflow-hidden">
+              <div className="glass-card p-6 rounded-3xl hover-lift transition-luxury h-full relative overflow-hidden">
                 {/* Background gradient */}
                 <div className={`absolute top-0 right-0 w-32 h-32 ${testimonial.gradient} opacity-10 rounded-full blur-2xl`}></div>
                 
@@ -73,7 +73,7 @@ const Testimonials = () => {
                   </div>
                   
                   {/* Quote */}
-                  <blockquote className="text-xl font-medium mb-8 leading-relaxed">
+                  <blockquote className="text-lg font-medium mb-6 leading-relaxed">
                     "{testimonial.quote}"
                   </blockquote>
                   
@@ -95,7 +95,7 @@ const Testimonials = () => {
         
         {/* Stats Section */}
         <div className="scroll-reveal">
-          <div className="glass-card rounded-3xl p-12 mb-16 backdrop-blur-xl border border-primary/20">
+          <div className="glass-card rounded-3xl p-8 mb-12 backdrop-blur-xl border border-primary/20">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div className="group">
                 <div className="text-4xl md:text-5xl font-heading font-black gradient-primary bg-clip-text text-transparent mb-2 group-hover:animate-pulse-glow">
@@ -120,8 +120,8 @@ const Testimonials = () => {
         </div>
         
         <div className="text-center scroll-reveal">
-          <div className="glass-card rounded-3xl p-16 max-w-5xl mx-auto backdrop-blur-xl border border-success/20 shadow-luxury">
-            <p className="text-2xl md:text-3xl font-heading font-bold leading-tight mb-8">
+          <div className="glass-card rounded-3xl p-8 max-w-5xl mx-auto backdrop-blur-xl border border-success/20 shadow-luxury">
+            <p className="text-xl md:text-2xl font-heading font-bold leading-tight mb-6">
               👉 These aren't tech geniuses.{" "}
               <br className="hidden md:block" />
               They're people just like you who decided to{" "}
