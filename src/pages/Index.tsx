@@ -1,3 +1,5 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import NewEra from "@/components/NewEra";
 import TargetAudience from "@/components/TargetAudience";
@@ -16,20 +18,37 @@ const Index = () => {
       {/* Site-wide Matrix Background */}
       <MatrixBackground />
 
-      {/* All content sections with relative z-index */}
-      <div className="relative z-20">
-        <Hero />
-        <NewEra />
-        <TargetAudience />
-        <Problem />
-        <Solution />
-        <Testimonials />
+      {/* Header */}
+      <Header />
 
-        <Pricing />
-        <CourseOffering />
-        <Founder />
-        <FinalCTA />
+      {/* All content sections with relative z-index and top padding for fixed header */}
+      <div className="relative z-20">
+        <div id="home" className="pt-16">
+          <Hero />
+        </div>
+        <div id="about">
+          <NewEra />
+          <TargetAudience />
+          <Problem />
+          <Solution />
+        </div>
+        <div id="testimonials">
+          <Testimonials />
+        </div>
+        <div id="courses">
+          <CourseOffering />
+        </div>
+        <div id="pricing">
+          <Pricing />
+        </div>
+        <div id="contact">
+          <Founder />
+          <FinalCTA />
+        </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
