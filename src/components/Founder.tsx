@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Founder = () => {
   return (
-    <section className="py-24 gradient-subtle">
+    <section className="py-24">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
