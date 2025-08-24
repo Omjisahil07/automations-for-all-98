@@ -27,14 +27,14 @@ export function MatrixBackground() {
     function draw() {
       if (!ctx || !canvas) return
 
-      ctx.fillStyle = "rgba(15, 15, 23, 0.04)"
+      ctx.fillStyle = "rgba(8, 12, 33, 0.04)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       ctx.font = fontSize + "px 'JetBrains Mono', monospace"
 
       for (let i = 0; i < drops.length; i++) {
         const text = matrixArray[Math.floor(Math.random() * matrixArray.length)]
-        ctx.fillStyle = `rgba(6, 182, 212, ${Math.random() * 0.5 + 0.1})`
+        ctx.fillStyle = `rgba(51, 144, 255, ${Math.random() * 0.8 + 0.2})`
         ctx.fillText(text, i * fontSize, drops[i] * fontSize)
 
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
@@ -59,5 +59,5 @@ export function MatrixBackground() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none opacity-20 z-0" />
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none opacity-30 z-0" />
 }

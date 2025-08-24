@@ -10,51 +10,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 20% 8%;
-    --foreground: 240 5% 96%;
+    --background: 220 30% 3%;
+    --foreground: 210 40% 98%;
 
-    --card: 240 15% 14%;
-    --card-foreground: 240 5% 96%;
+    --card: 220 30% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 240 15% 14%;
-    --popover-foreground: 240 5% 96%;
+    --popover: 220 30% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 239 84% 67%;
-    --primary-foreground: 240 5% 96%;
-    --primary-glow: 239 84% 80%;
+    --primary: 214 100% 60%;
+    --primary-foreground: 220 30% 3%;
+    --primary-glow: 214 100% 75%;
 
-    --secondary: 240 15% 22%;
-    --secondary-foreground: 240 5% 96%;
+    --secondary: 220 100% 45%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 240 15% 22%;
-    --muted-foreground: 240 5% 74%;
+    --muted: 220 30% 15%;
+    --muted-foreground: 210 20% 65%;
 
-    --accent: 188 95% 43%;
-    --accent-foreground: 240 5% 96%;
-    --accent-glow: 188 95% 60%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 30% 3%;
+    --accent-glow: 195 100% 65%;
 
     --success: 160 84% 39%;
-    --success-foreground: 240 5% 96%;
+    --success-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 240 5% 96%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 15% 22%;
-    --input: 240 15% 22%;
-    --ring: 239 84% 67%;
+    --border: 220 30% 15%;
+    --input: 220 30% 15%;
+    --ring: 214 100% 60%;
 
-    /* Neural Network Dark Theme Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%) 0%, hsl(188 95% 43%) 100%);
-    --gradient-cta: linear-gradient(90deg, hsl(239 84% 67%) 0%, hsl(160 84% 39%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(240 20% 8%) 0%, hsl(239 84% 67% / 0.2) 50%, hsl(240 20% 8%) 100%);
-    --gradient-neural: conic-gradient(from 180deg, hsl(239 84% 67%) 0%, hsl(188 95% 43%) 120%, hsl(160 84% 39%) 240%, hsl(239 84% 67%) 360%);
+    /* Updated Color Theme Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 100% 60%) 0%, hsl(195 100% 50%) 100%);
+    --gradient-cta: linear-gradient(90deg, hsl(214 100% 60%) 0%, hsl(220 100% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 3%) 0%, hsl(214 100% 60% / 0.3) 50%, hsl(220 30% 3%) 100%);
+    --gradient-neural: conic-gradient(from 180deg, hsl(214 100% 60%) 0%, hsl(195 100% 50%) 120%, hsl(220 100% 45%) 240%, hsl(214 100% 60%) 360%);
     --gradient-mesh: 
-      radial-gradient(circle at 20% 20%, hsl(239 84% 67% / 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(188 95% 43% / 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, hsl(160 84% 39% / 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 60% 60%, hsl(239 84% 67% / 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 90% 90%, hsl(188 95% 43% / 0.2) 0%, transparent 50%);
-    --gradient-glass: linear-gradient(135deg, rgba(151, 122, 255, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+      radial-gradient(circle at 20% 20%, hsl(214 100% 60% / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(195 100% 50% / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, hsl(220 100% 45% / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, hsl(214 100% 60% / 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 90% 90%, hsl(195 100% 50% / 0.3) 0%, transparent 50%);
+    --gradient-glass: linear-gradient(135deg, hsl(214 100% 60% / 0.1) 0%, hsl(195 100% 50% / 0.05) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background) / 0.95) 100%);
     
     --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.4);
