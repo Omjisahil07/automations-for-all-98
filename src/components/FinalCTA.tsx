@@ -28,7 +28,7 @@ const FinalCTA = () => {
           </div>
           
           {/* Main Headline */}
-          <h2 className="text-6xl md:text-8xl font-heading font-black leading-tight">
+          <h2 className="text-4xl md:text-8xl font-heading font-black leading-tight">
             Don't Watch the AI Boom.{" "}
             <br />
             <span className="text-shimmer">Lead It.</span>
