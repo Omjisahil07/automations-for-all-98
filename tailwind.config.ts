@@ -20,8 +20,8 @@ export default {
 		extend: {
 		fontFamily: {
 			sans: ['Inter', 'sans-serif'],
-			heading: ['Orbitron', 'sans-serif'],
-			mono: ['JetBrains Mono', 'monospace'],
+			heading: ['Poppins', 'sans-serif'],
+			display: ['Montserrat', 'sans-serif'],
 		},
 			colors: {
 				border: 'hsl(var(--border))',

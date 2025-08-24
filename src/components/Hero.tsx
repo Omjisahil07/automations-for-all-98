@@ -43,7 +43,7 @@ const Hero = () => {
         
         {/* Main Headline */}
         <div className="mb-10 scroll-reveal">
-          <h1 className="text-6xl md:text-8xl font-heading font-black mb-6 leading-tight tracking-tight">
+          <h1 className="text-6xl md:text-8xl font-display font-black mb-6 leading-tight tracking-tight">
             Build & Sell{" "}
             <span className="relative inline-block">
               <span className="text-shimmer">AI Automations</span>
