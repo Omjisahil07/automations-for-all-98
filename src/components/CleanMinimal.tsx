@@ -1,4 +1,8 @@
+"use client";
+import React from "react";
+import { motion } from "motion/react";
 import { HeroContent } from "./HeroContent";
+import { BackgroundBeams } from "./ui/background-beams";
 
 const FloatingShape = ({
   shape,
@@ -47,6 +51,9 @@ export const CleanMinimal = () => {
     <section className="relative min-h-screen bg-gradient-subtle overflow-hidden">
       {/* Clean Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
+
+      {/* Background Beams */}
+      <BackgroundBeams className="absolute inset-0" />
 
       {/* Floating Geometric Shapes */}
       <div className="absolute inset-0">
@@ -101,7 +108,7 @@ export const CleanMinimal = () => {
       </div>
 
       {/* Subtle Grid Overlay */}
-      <div className="absolute inset-0 opacity-5">
+      {/* <div className="absolute inset-0 opacity-5">
         <div
           className="w-full h-full"
           style={{
@@ -112,7 +119,7 @@ export const CleanMinimal = () => {
             backgroundSize: "60px 60px",
           }}
         />
-      </div>
+      </div> */}
 
       {/* Subtle Glow Effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />

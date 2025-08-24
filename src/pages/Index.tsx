@@ -23,7 +23,7 @@ const Index = () => {
 
       {/* All content sections with relative z-index and top padding for fixed header */}
       <div className="relative z-20">
-        <div id="home" className="pt-16">
+        <div id="home" className="">
           <Hero />
         </div>
         <div id="about">

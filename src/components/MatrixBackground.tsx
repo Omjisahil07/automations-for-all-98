@@ -121,5 +121,5 @@ export function MatrixBackground() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none opacity-45 z-1" />
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none opacity-50 z-1" />
 }
