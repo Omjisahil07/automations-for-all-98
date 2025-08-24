@@ -6,18 +6,15 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
     { name: "Courses", href: "#courses" },
     { name: "Success Stories", href: "#testimonials" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Contact", href: "#contact" }
+    { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
     }
   };
@@ -53,18 +50,7 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="outline"
-              size="sm"
-              className="text-sm"
-            >
-              Login
-            </Button>
-            <Button
-              variant="cta"
-              size="sm"
-              className="text-sm"
-            >
+            <Button variant="cta" size="sm" className="text-sm">
               Start Learning
             </Button>
           </div>
@@ -96,18 +82,7 @@ const Header = () => {
                 </button>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-white/10">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full text-sm"
-                >
-                  Login
-                </Button>
-                <Button
-                  variant="cta"
-                  size="sm"
-                  className="w-full text-sm"
-                >
+                <Button variant="cta" size="sm" className="w-full text-sm">
                   Start Learning
                 </Button>
               </div>
