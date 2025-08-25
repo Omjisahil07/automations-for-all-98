@@ -59,7 +59,7 @@ const FinalCTA = () => {
             <Button
               variant="hero"
               size="xl"
-              className="text-lg md:text-xl lg:text-2xl px-8 md:px-12 lg:px-16 py-4 md:py-6 lg:py-8 rounded-2xl group shadow-luxury hover:shadow-glow w-full sm:w-auto"
+              className="text-lg md:text-xl lg:text-2xl px-8 md:px-12 lg:px-16 py-4 md:py-6 lg:py-8 rounded-full group shadow-luxury hover:shadow-glow w-full sm:w-auto"
             >
               <Rocket className="w-6 h-6 md:w-8 md:h-8 mr-3 md:mr-4 group-hover:animate-pulse-glow" />
               Join Automation School Today

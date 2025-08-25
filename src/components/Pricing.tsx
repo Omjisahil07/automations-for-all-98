@@ -218,7 +218,7 @@ const Pricing = () => {
                     </p>
                     <Button
                       variant={path.popular ? "hero" : "cta"}
-                      className="w-full rounded-2xl py-3 md:py-4 text-base md:text-lg font-bold shadow-luxury hover:shadow-glow"
+                      className="w-full rounded-full py-3 md:py-4 text-base md:text-lg font-bold shadow-luxury hover:shadow-glow"
                       size="default"
                     >
                       Choose This Path
@@ -237,7 +237,7 @@ const Pricing = () => {
               <Button
                 variant="hero"
                 size="lg"
-                className="text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-2xl shadow-luxury hover:shadow-glow w-full sm:w-auto"
+                className="text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-full shadow-luxury hover:shadow-glow w-full sm:w-auto"
               >
                 Start My AI Journey Today
               </Button>

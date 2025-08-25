@@ -167,7 +167,7 @@ const Testimonials = () => {
               <Button
                 variant="hero"
                 size="xl"
-                className="text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-2xl shadow-luxury hover:shadow-glow w-full sm:w-auto"
+                className="text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-full shadow-luxury hover:shadow-glow w-full sm:w-auto"
               >
                 <TrendingUp className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3" />
                 Join Them Today
