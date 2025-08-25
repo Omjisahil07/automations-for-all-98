@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+# Automation School™
 
-## Project info
+**Automation School™** is a platform to help you build and sell AI automations in just 30 days. Learn to create Client-Ready AI Systems™ that businesses pay for, using tools like **n8n**, **Make**, and **AI Agents**.
 
-**URL**: https://lovable.dev/projects/55ed7e1b-fc5b-4baa-802c-43e1fa6f4207
+## Features
 
-## How can I edit this code?
+- Build AI automations with ease.
+- Learn industry-standard tools like n8n and Make.
+- Join a community of 1000+ successful learners.
+- Create systems that businesses are willing to pay for.
 
-There are several ways of editing your application.
+## Project Structure
 
-**Use Lovable**
+- **`src/components`**: Contains reusable React components like `Header`.
+- **`index.html`**: The main HTML file with metadata and favicon links.
+- **`src/main.tsx`**: Entry point for the React application.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/55ed7e1b-fc5b-4baa-802c-43e1fa6f4207) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v16 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/automation-school.git
+   cd automation-school
+   ```
 
-Follow these steps:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. Open your browser and navigate to `http://localhost:3000`.
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Scripts
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- `npm run dev`: Start the development server.
+- `npm run build`: Build the project for production.
+- `npm run preview`: Preview the production build.
 
-**Edit a file directly in GitHub**
+## License
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-**Use GitHub Codespaces**
+## Author
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Created by **Ambesh Tiwari**.
 
-## What technologies are used for this project?
+## Contributing
 
-This project is built with:
+Contributions are welcome! Feel free to open issues or submit pull requests to improve the project.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/55ed7e1b-fc5b-4baa-802c-43e1fa6f4207) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)

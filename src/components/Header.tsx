@@ -6,7 +6,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Courses", href: "#courses" },
+    { name: "Courses", href: "#pricing" },
     { name: "Success Stories", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
   ];
@@ -41,7 +41,7 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-white transition-colors hover:bg-blue-500 rounded-full px-3 py-1"
               >
                 {item.name}
               </button>
@@ -50,7 +50,7 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="cta" size="sm" className="text-sm">
+            <Button variant="cta" size="sm" className="rounded-full text-sm">
               Start Learning
             </Button>
           </div>
@@ -58,7 +58,7 @@ const Header = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
+            className="md:hidden p-2 rounded-full hover:bg-muted/50 transition-colors"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6" />
@@ -76,13 +76,17 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                  className="text-left text-sm font-medium text-muted-foreground hover:text-white transition-colors hover:bg-blue-500 rounded-full px-4 py-2"
                 >
                   {item.name}
                 </button>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-white/10">
-                <Button variant="cta" size="sm" className="w-full text-sm">
+                <Button
+                  variant="cta"
+                  size="sm"
+                  className=" rounded-full w-full text-sm"
+                >
                   Start Learning
                 </Button>
               </div>
