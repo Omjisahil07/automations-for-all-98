@@ -2,11 +2,11 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 
 const CourseOffering = () => {
   const features = [
-    "AI Foundations — The exact tools you need (nothing more, nothing less).",
-    "Client-Ready AI System™ — A framework to build & sell automations with confidence.",
-    "Hands-On Projects — Real workflows from real businesses.",
-    "Monetization Playbook — How to pitch, price & win clients.",
-    "Community & Mentorship — Surround yourself with learners, experts, and support.",
+    "AI Foundations : The exact tools you need (nothing more, nothing less).",
+    "Client-Ready AI System™ : A framework to build & sell automations with confidence.",
+    "Hands-On Projects : Real workflows from real businesses.",
+    "Monetization Playbook : How to pitch, price & win clients.",
+    "Community & Mentorship : Surround yourself with learners, experts, and support.",
   ];
 
   return (
@@ -28,7 +28,8 @@ const CourseOffering = () => {
                   </span>
                 </div>
                 <p className="text-base md:text-lg lg:text-xl leading-relaxed">
-                  {feature}
+                  <span className="font-bold">{feature.split(":")[0]}:</span>
+                  {feature.split(":")[1]}
                 </p>
               </div>
             </BackgroundBeamsWithCollision>
@@ -50,4 +51,3 @@ const CourseOffering = () => {
 };
 
 export default CourseOffering;
-

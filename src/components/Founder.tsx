@@ -7,7 +7,7 @@ const Founder = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-4 md:space-y-6 order-2 lg:order-1">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black leading-tight">
-              Guided By <br />
+              Mentored By <br />
               <span className="gradient-primary bg-clip-text text-transparent">
                 Ambesh Tiwari
               </span>
@@ -15,9 +15,9 @@ const Founder = () => {
 
             <div className="space-y-4 md:space-y-6 text-lg md:text-xl lg:text-2xl leading-relaxed text-muted-foreground font-light">
               <p>
-                Hi, I'm Ambesh. I built Automation School because I saw
-                talented people stuck doing repetitive, low-value work while the
-                AI revolution passed them by.
+                Hi, I'm Ambesh. I built Automation School because I saw talented
+                people stuck doing repetitive, low-value work while the AI
+                revolution passed them by.
               </p>
 
               <p>
@@ -40,15 +40,15 @@ const Founder = () => {
                 size="lg"
                 className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-2xl w-full sm:w-auto"
               >
-               Start Learning From Ambesh Today
+                Start Learning From Ambesh Today
               </Button>
             </div>
           </div>
 
           <div className="relative space-y-4 md:space-y-6 order-1 lg:order-2">
-            <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl shadow-elegant flex items-center justify-center overflow-hidden">
+            <div className="w-full h-80 md:h-[30rem] lg:h-[40rem] bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl shadow-elegant flex items-center justify-center">
               <img
-                src="https://ambesh.com/wp-content/uploads/2023/03/Ambesh-Tiwari-e1688803167817-1024x828.jpg"
+                src="/ambesh.jpg"
                 alt="Ambesh Tiwari"
                 className="w-full h-full object-cover border-2 md:border-4 border-white shadow-lg rounded-md"
               />

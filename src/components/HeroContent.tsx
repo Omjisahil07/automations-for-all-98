@@ -90,8 +90,9 @@ export const HeroContent = () => {
     <div className="relative z-10 container mx-auto px-4 py-16 md:py-24 lg:py-32">
       <div className="text-center space-y-6 max-w-6xl mx-auto">
         {/* Pre-headline */}
-        <div className="mb-4 sm:mb-6 scroll-reveal">
-          <div className="inline-flex items-center space-x-2 px-3 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury">
+        <div className="mb-4 sm:mb-4 scroll-reveal">
+          <div className="inline-flex items-center space-x-2 px-3 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury mt-16 sm:mt-24 lg:-mt-4">
+            {/* Adjusted `mt-6` for more top margin on mobile screens */}
             <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-accent animate-pulse-glow" />
             <span className="text-xs sm:text-sm md:text-lg font-medium text-shimmer">
               From Beginner to In-Demand in Just 30 Days
@@ -101,7 +102,7 @@ export const HeroContent = () => {
         </div>
 
         {/* Main Headline */}
-        <div className="space-y-2 md:space-y-4">
+        <div className="space-y-4 md:space-y-6">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-tight tracking-tight">
             Build & Sell{" "}
             <span className="relative inline-block">
@@ -110,7 +111,7 @@ export const HeroContent = () => {
             </span>
             ,<br />
             <span className="text-xl md:text-3xl lg:text-4xl text-muted-foreground text-white font-normal">
-              Even If You're Not Technical
+              Even If You&apos;re Not Technical
             </span>
           </h1>
           <p className="text-base md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light px-4">
@@ -124,19 +125,20 @@ export const HeroContent = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="space-y-4 md:space-y-6">
+        <div className="space-y-6 md:space-y-8">
+          {/* Adjusted spacing for consistency */}
           <div className="flex gap-4 md:gap-6 justify-center items-center">
             <MovingButton
               borderRadius="2rem"
               width="20rem"
               height="2rem"
-              className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-2xl glass-card  w-full sm:w-auto"
+              className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-2xl glass-card w-full sm:w-auto"
             >
               Start Your AI Journey Today
             </MovingButton>
           </div>
 
-          <div className="flex flex-row items-center justify-center mb-6 md:mb-10 w-full ">
+          <div className="flex flex-row items-center justify-center mb-6 md:mb-10 w-full">
             <AnimatedTooltip items={students} />
           </div>
 
@@ -144,7 +146,7 @@ export const HeroContent = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center pt-4 md:pt-6">
             <div className="space-y-1 md:space-y-2">
               <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-gradient-primary">
-                <AnimatedCounter target={10000} suffix="+" />
+                <AnimatedCounter target={1000} suffix="+" />
               </div>
               <p className="text-xs md:text-sm text-muted-foreground">
                 Students Trained
