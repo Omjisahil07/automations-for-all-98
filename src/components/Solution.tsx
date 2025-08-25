@@ -52,10 +52,10 @@ const Solution = () => {
       <div className="container mx-auto px-4 max-w-8xl">
         <div className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black leading-tight">
-            The Client-Ready AI System™
+            The Client-Ready AI System
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto font-light leading-relaxed">
-            At Automation School™, you'll master a framework built to turn
+            At Automation School, you'll master a framework built to turn
             skills into income.
           </p>
         </div>

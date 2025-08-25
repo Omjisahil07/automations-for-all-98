@@ -14,7 +14,7 @@ const CourseOffering = () => {
       <div className="container mx-auto px-4 max-w-8xl">
         <div className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black leading-tight">
-            What's Inside Automation School™
+            What's Inside Automation School
           </h2>
         </div>
 

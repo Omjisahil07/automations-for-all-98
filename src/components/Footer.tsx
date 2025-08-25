@@ -183,7 +183,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
               <span>
-                © {currentYear} Automation School™. All rights reserved.
+                © {currentYear} Automation School. All rights reserved.
               </span>
               <a href="#" className="hover:text-primary transition-colors">
                 Privacy Policy

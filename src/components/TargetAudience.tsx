@@ -65,7 +65,7 @@ const TargetAudience = () => {
             <span className="text-shimmer">Refuse to Stay Average.</span>
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto font-light leading-relaxed">
-            Automation School™ was designed for those who know they're meant for
+            Automation School was designed for those who know they're meant for
             more:
           </p>
         </div>
