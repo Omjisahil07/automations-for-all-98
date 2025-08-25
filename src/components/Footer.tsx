@@ -58,20 +58,20 @@ const Footer = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Main Footer Content */}
-        <div className="py-16 grid lg:grid-cols-5 gap-12">
+        <div className="py-8 sm:py-10 lg:py-12 grid lg:grid-cols-5 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center space-x-2">
-              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
-                <Sparkles className="w-7 h-7 text-white" />
+            <div className="flex items-center ">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                <img src="/1.png" className="w-8 h-8" />
               </div>
               <div>
                 <h2 className="text-2xl font-heading font-bold gradient-primary bg-clip-text text-transparent">
                   Automation School™
                 </h2>
-                <p className="text-sm text-muted-foreground">
+                {/* <p className="text-sm text-muted-foreground">
                   AI Learning Revolution
-                </p>
+                </p> */}
               </div>
             </div>
 
@@ -79,36 +79,6 @@ const Footer = () => {
               Transforming careers through practical AI education. Join 1,000+
               learners who've mastered the art of automation.
             </p>
-
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-sm">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>support@automationschool.in</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+91 8873262374</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span>Delhi, India</span>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 rounded-lg glass-card hover:bg-primary/10 flex items-center justify-center transition-colors group"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Courses */}
@@ -154,22 +124,39 @@ const Footer = () => {
             <h3 className="text-lg font-heading font-bold text-foreground">
               Support
             </h3>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 text-sm">
+                <Mail className="w-4 h-4 text-primary" />
+                <span>support@automationschool.in</span>
+              </div>
+              <div className="flex items-center space-x-3 text-sm">
+                <Phone className="w-4 h-4 text-primary" />
+                <span>+91 8873262374</span>
+              </div>
+              <div className="flex items-center space-x-3 text-sm">
+                <MapPin className="w-4 h-4 text-primary" />
+                <span>Delhi, India</span>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center space-x-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="w-10 h-10 rounded-lg glass-card hover:bg-primary/10 flex items-center justify-center transition-colors group"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center -mt-4">
           <div className="w-full h-32">
             <TextHoverEffect
               text="AUTOMATION SCHOOL"
@@ -179,7 +166,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-8 border-t border-border">
+        <div className="py-6 sm:py-8 lg:py-10 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
               <span>
@@ -194,7 +181,7 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <span>Developed by</span>
+              <span>Built by</span>
               <span>BDA Technologies</span>
             </div>
           </div>
