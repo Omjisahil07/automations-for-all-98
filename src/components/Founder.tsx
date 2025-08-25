@@ -15,7 +15,7 @@ const Founder = () => {
 
             <div className="space-y-4 md:space-y-6 text-lg md:text-xl lg:text-2xl leading-relaxed text-muted-foreground font-light">
               <p>
-                Hi, I'm Ambesh. I built Automation School™ because I saw
+                Hi, I'm Ambesh. I built Automation School because I saw
                 talented people stuck doing repetitive, low-value work while the
                 AI revolution passed them by.
               </p>

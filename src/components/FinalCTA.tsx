@@ -62,8 +62,8 @@ const FinalCTA = () => {
               className="text-lg md:text-xl lg:text-2xl px-8 md:px-12 lg:px-16 py-4 md:py-6 lg:py-8 rounded-2xl group shadow-luxury hover:shadow-glow w-full sm:w-auto"
             >
               <Rocket className="w-6 h-6 md:w-8 md:h-8 mr-3 md:mr-4 group-hover:animate-pulse-glow" />
-              Join Automation School™ Today
-              <ArrowRight className="w-6 h-6 md:w-8 md:h-8 ml-3 md:ml-4 group-hover:translate-x-2 transition-transform" />
+              Join Automation School Today
+            
             </Button>
 
             <div className="text-center space-y-2">
@@ -72,7 +72,7 @@ const FinalCTA = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 md:space-x-6 text-sm">
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-success rounded-full animate-pulse-glow"></div>
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse-glow"></div>
                   <span>Risk-Free Guarantee</span>
                 </div>
                 <div className="flex items-center space-x-2">

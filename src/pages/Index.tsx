@@ -11,6 +11,7 @@ import Pricing from "@/components/Pricing";
 import Founder from "@/components/Founder";
 import FinalCTA from "@/components/FinalCTA";
 import { MatrixBackground } from "@/components/MatrixBackground";
+import FinalTestimonial from "@/components/FinalTestimonial";
 
 const Index = () => {
   return (
@@ -38,11 +39,12 @@ const Index = () => {
         <div id="pricing">
           <Pricing />
           <div id="courses">
-          <CourseOffering />
-        </div>
+            <CourseOffering />
+          </div>
         </div>
         <div id="contact">
           <Founder />
+          <FinalTestimonial/>
           <FinalCTA />
         </div>
       </div>

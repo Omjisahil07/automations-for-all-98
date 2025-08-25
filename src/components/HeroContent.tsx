@@ -90,13 +90,13 @@ export const HeroContent = () => {
     <div className="relative z-10 container mx-auto px-4 py-16 md:py-24 lg:py-32">
       <div className="text-center space-y-6 max-w-6xl mx-auto">
         {/* Pre-headline */}
-        <div className="mb-4 md:mb-6 scroll-reveal">
-          <div className="inline-flex items-center space-x-2 px-4 md:px-8 py-2 md:py-4 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury">
-            <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-accent animate-pulse-glow" />
-            <span className="text-sm md:text-lg font-medium text-shimmer">
+        <div className="mb-4 sm:mb-6 scroll-reveal">
+          <div className="inline-flex items-center space-x-2 px-3 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury">
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-accent animate-pulse-glow" />
+            <span className="text-xs sm:text-sm md:text-lg font-medium text-shimmer">
               From Beginner to In-Demand in Just 30 Days
             </span>
-            <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-accent animate-pulse-glow" />
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-accent animate-pulse-glow" />
           </div>
         </div>
 
@@ -109,7 +109,7 @@ export const HeroContent = () => {
               <div className="absolute -bottom-1 md:-bottom-2 left-0 right-0 h-0.5 md:h-1 gradient-hero rounded-full transform scale-x-0 animate-[scale-in_1s_ease-out_0.5s_forwards]"></div>
             </span>
             ,<br />
-            <span className="text-xl md:text-3xl lg:text-4xl text-muted-foreground font-normal">
+            <span className="text-xl md:text-3xl lg:text-4xl text-muted-foreground text-white font-normal">
               Even If You're Not Technical
             </span>
           </h1>
@@ -127,8 +127,8 @@ export const HeroContent = () => {
         <div className="space-y-4 md:space-y-6">
           <div className="flex gap-4 md:gap-6 justify-center items-center">
             <MovingButton
-              borderRadius="1.75rem"
-              width="22rem"
+              borderRadius="2rem"
+              width="20rem"
               height="2rem"
               className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-2xl glass-card  w-full sm:w-auto"
             >
