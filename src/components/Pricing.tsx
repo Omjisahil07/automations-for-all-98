@@ -170,12 +170,12 @@ const Pricing = () => {
                   {/* Popular Badge - On Border */}
                   {path.popular && (
                     <motion.div 
-                      className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20"
+                      className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-20"
                       initial={{ y: -10, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <div className="gradient-hero px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-white font-bold text-xs md:text-sm shadow-luxury animate-pulse-glow whitespace-nowrap">
+                      <div className="gradient-hero px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-white font-bold text-xs md:text-sm shadow-luxury animate-pulse-glow whitespace-nowrap border-2 border-background">
                         <Star className="w-3 h-3 md:w-4 md:h-4 inline mr-1 md:mr-2" />
                         {path.badge}
                       </div>
