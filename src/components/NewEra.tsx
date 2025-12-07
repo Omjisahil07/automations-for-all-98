@@ -52,7 +52,7 @@ const itemVariants = {
 
 const NewEra = () => {
   return (
-    <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-background/5"></div>
       <FloatingOrbs count={4} />
 
@@ -62,7 +62,7 @@ const NewEra = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16 lg:mb-20"
+          className="text-center space-y-3 md:space-y-4 mb-8 md:mb-10"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black leading-tight">
             A New Era of Work Has <span className="text-shimmer">Begun.</span>
@@ -85,7 +85,7 @@ const NewEra = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10"
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>

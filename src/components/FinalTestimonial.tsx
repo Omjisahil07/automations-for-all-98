@@ -321,7 +321,7 @@ export default function FinalTestimonial() {
 
   return (
     <div className="container mx-auto px-4 max-w-8xl relative z-10">
-        <div className="space-y-4 md:space-y-6 mb-12 md:mb-16 lg:mb-20">
+        <div className="space-y-3 md:space-y-4 mb-8 md:mb-10">
             <div className="text-center">
          <div className="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 rounded-full glass-card backdrop-blur-xl border border-primary/20">
                     <Star className="w-4 h-4 md:w-5 md:h-5 text-primary animate-pulse-glow" />
@@ -332,7 +332,7 @@ export default function FinalTestimonial() {
             </div>
 
         {/* Header Section */}
-        <div className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16">
+        <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-10">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black leading-tight">
             Loved by people all over the universe
           </h2>

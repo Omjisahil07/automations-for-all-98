@@ -10,15 +10,15 @@ const CourseOffering = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 lg:py-32">
+    <section className="py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 max-w-8xl">
-        <div className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16">
+        <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-10">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black leading-tight">
             What's Inside Automation School
           </h2>
         </div>
 
-        <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
+        <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
           {features.map((feature, index) => (
             <BackgroundBeamsWithCollision key={index}>
               <div className="flex items-start space-x-3 md:space-x-4 bg-card p-4 md:p-6 rounded-xl shadow-elegant">

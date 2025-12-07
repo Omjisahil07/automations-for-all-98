@@ -6,7 +6,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 
 const FinalCTA = () => {
   return (
-    <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
       {/* Floating Elements */}
       <FloatingOrbs count={5} />
       
@@ -28,7 +28,7 @@ const FinalCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center space-y-8 md:space-y-12"
+          className="text-center space-y-6 md:space-y-8"
         >
           {/* Badge */}
           <motion.div
@@ -82,7 +82,7 @@ const FinalCTA = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col gap-6 md:gap-8 justify-center items-center pt-4 md:pt-8"
+            className="flex flex-col gap-4 md:gap-6 justify-center items-center pt-2 md:pt-4"
           >
             <MagneticButton strength={0.3}>
               <motion.button
