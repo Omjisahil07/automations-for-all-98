@@ -33,14 +33,14 @@ const itemVariants = {
 
 const Founder = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20">
+    <section className="py-8 md:py-12 lg:py-16">
       <div className="container mx-auto px-4 max-w-8xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="text-center space-y-3 md:space-y-4 mb-8 md:mb-10"
+          className="text-center space-y-2 md:space-y-3 mb-6 md:mb-8"
         >
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black leading-tight">
             <span>Mentored By </span>

@@ -83,14 +83,14 @@ const Card = ({ id, title, description, gradient }: CardProps) => (
 
 const Solution = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20">
+    <section className="py-8 md:py-12 lg:py-16">
       <div className="container mx-auto px-4 max-w-8xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="text-center space-y-3 md:space-y-4 mb-8 md:mb-10"
+          className="text-center space-y-2 md:space-y-3 mb-6 md:mb-8"
         >
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black leading-tight">
             The Client-Ready AI System
@@ -106,7 +106,7 @@ const Solution = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 mb-4 md:mb-6"
         >
           {cardData.map((card) => (
             <Card key={card.id} {...card} />
