@@ -29,41 +29,29 @@ const Index = () => {
           <Hero />
         </div>
         
-        <SectionDivider variant="wave" className="text-primary/10" />
-        
         <div id="about">
           <NewEra />
-          <SectionDivider variant="curve" className="text-accent/10" />
           <TargetAudience />
-          <SectionDivider variant="dots" />
           <Problem />
-          <SectionDivider variant="wave" flip className="text-primary/10" />
           <Solution />
         </div>
         
-        <SectionDivider variant="curve" className="text-accent/10" />
+        <SectionDivider variant="dots" />
         
         <div id="testimonials">
           <Testimonials />
         </div>
         
-        <SectionDivider variant="wave" className="text-primary/10" />
-        
         <div id="pricing">
           <Pricing />
-          <SectionDivider variant="dots" />
-          <div id="courses">
-            <CourseOffering />
-          </div>
+          <CourseOffering />
         </div>
         
-        <SectionDivider variant="curve" flip className="text-accent/10" />
+        <SectionDivider variant="dots" />
         
         <div id="contact">
           <Founder />
-          <SectionDivider variant="dots" />
           <FinalTestimonial />
-          <SectionDivider variant="wave" flip className="text-primary/10" />
           <FinalCTA />
         </div>
       </div>

@@ -100,7 +100,7 @@ const Pricing = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden">
       {/* Floating Orbs */}
       <FloatingOrbs count={4} className="opacity-20" />
       
@@ -120,7 +120,7 @@ const Pricing = () => {
 
       <div className="container mx-auto px-4 max-w-8xl relative z-10">
         <motion.div 
-          className="text-center space-y-3 md:space-y-4 mb-8 md:mb-10"
+          className="text-center space-y-2 md:space-y-3 mb-6 md:mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -147,7 +147,7 @@ const Pricing = () => {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-5 mb-6 md:mb-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

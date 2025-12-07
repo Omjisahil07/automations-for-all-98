@@ -39,7 +39,7 @@ const itemVariants = {
 
 const Problem = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-background/5"></div>
 
       {/* Animated noise pattern */}
@@ -66,7 +66,7 @@ const Problem = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="text-center space-y-3 md:space-y-4 mb-8 md:mb-10"
+          className="text-center space-y-2 md:space-y-3 mb-6 md:mb-8"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -107,7 +107,7 @@ const Problem = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-8 md:mb-10"
+          className="mb-6 md:mb-8"
         >
           <div className="glass-card rounded-3xl p-6 md:p-8 lg:p-12 backdrop-blur-xl border border-destructive/20 shadow-luxury max-w-6xl mx-auto">
             <div className="text-center space-y-4 md:space-y-6 mb-8 md:mb-12">

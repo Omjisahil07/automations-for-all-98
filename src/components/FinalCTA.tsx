@@ -6,7 +6,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 
 const FinalCTA = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden">
       {/* Floating Elements */}
       <FloatingOrbs count={5} />
       
@@ -28,7 +28,7 @@ const FinalCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center space-y-6 md:space-y-8"
+          className="text-center space-y-4 md:space-y-6"
         >
           {/* Badge */}
           <motion.div

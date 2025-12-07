@@ -60,7 +60,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden">
       {/* Floating Orbs */}
       <FloatingOrbs count={3} className="opacity-20" />
 
@@ -83,7 +83,7 @@ const Testimonials = () => {
 
       <div className="container mx-auto px-4 max-w-8xl relative z-10">
         <motion.div 
-          className="text-center space-y-4 md:space-y-6 mb-8 md:mb-12"
+          className="text-center space-y-2 md:space-y-4 mb-6 md:mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -105,7 +105,7 @@ const Testimonials = () => {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 mb-6 md:mb-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -187,7 +187,7 @@ const Testimonials = () => {
 
         {/* Stats Section */}
         <motion.div 
-          className="mb-8 md:mb-10"
+          className="mb-6 md:mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
