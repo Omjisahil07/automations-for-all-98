@@ -74,7 +74,7 @@ const NewEra = () => {
             <p className="text-foreground font-medium">
               But a new kind of expert is rising, the{" "}
               <span className="gradient-hero bg-clip-text text-transparent font-bold">
-                AI automation professional.
+                Agentic AI professional.
               </span>
             </p>
           </div>

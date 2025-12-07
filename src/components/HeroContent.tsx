@@ -11,7 +11,7 @@ const students = [
   {
     id: 1,
     name: "Ravi Kumar",
-    designation: "AI Automation Expert",
+    designation: "Agentic AI Expert",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
   },
@@ -127,7 +127,7 @@ export const HeroContent = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                AI Automations
+                Agentic AI
               </motion.span>
               <motion.div 
                 className="absolute -bottom-1 md:-bottom-2 left-0 right-0 h-0.5 md:h-1 gradient-hero rounded-full"
@@ -189,7 +189,7 @@ export const HeroContent = () => {
             {[
               { end: 1000, suffix: "+", label: "Students Trained" },
               { end: 95, suffix: "%", label: "Success Rate" },
-              { end: 500, suffix: "+", label: "AI Automations Built" },
+              { end: 500, suffix: "+", label: "Agentic AI Built" },
             ].map((stat, index) => (
               <motion.div 
                 key={index}
@@ -200,7 +200,7 @@ export const HeroContent = () => {
                 <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gradient-primary">
                   <CountUp end={stat.end} suffix={stat.suffix} duration={2.5} />
                 </div>
-                <p className="text-xs md:text-sm text-muted-foreground group-hover:text-white transition-colors">
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground group-hover:text-white transition-colors leading-tight">
                   {stat.label}
                 </p>
               </motion.div>
