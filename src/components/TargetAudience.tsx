@@ -35,7 +35,7 @@ const TargetAudience = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-background/10"></div>
 
       {/* Animated Background Grid */}
@@ -52,7 +52,7 @@ const TargetAudience = () => {
       </div>
 
       <div className="container mx-auto px-4 max-w-8xl relative z-10">
-        <div className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16 lg:mb-20 scroll-reveal">
+        <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-10 scroll-reveal">
           <div className="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 rounded-full glass-card backdrop-blur-xl border border-accent/20">
             <Star className="w-4 h-4 md:w-5 md:h-5 text-accent animate-pulse-glow" />
             <span className="text-xs md:text-sm font-medium text-accent">
@@ -70,7 +70,7 @@ const TargetAudience = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12 mb-12 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-10">
           {audiences.map((audience, index) => (
             <div
               key={index}

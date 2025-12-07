@@ -75,11 +75,11 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
         );
       case "dots":
         return (
-          <div className="w-full h-16 flex items-center justify-center gap-4">
+          <div className="w-full h-8 flex items-center justify-center gap-3">
             {[0, 1, 2, 3, 4].map((i) => (
               <motion.div
                 key={i}
-                className="w-2 h-2 rounded-full bg-primary/40"
+                className="w-1.5 h-1.5 rounded-full bg-primary/40"
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
