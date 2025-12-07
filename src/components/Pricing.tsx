@@ -167,29 +167,29 @@ const Pricing = () => {
                 }`}
               >
                 <div className="relative overflow-visible rounded-3xl h-full">
+                  {/* Popular Badge - On Border */}
+                  {path.popular && (
+                    <motion.div 
+                      className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20"
+                      initial={{ y: -10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                    >
+                      <div className="gradient-hero px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-white font-bold text-xs md:text-sm shadow-luxury animate-pulse-glow whitespace-nowrap">
+                        <Star className="w-3 h-3 md:w-4 md:h-4 inline mr-1 md:mr-2" />
+                        {path.badge}
+                      </div>
+                    </motion.div>
+                  )}
+
                   {/* Background Gradient */}
                   <div
                     className={`absolute top-0 right-0 w-40 h-40 ${path.gradient} opacity-5 rounded-full blur-3xl`}
                   />
 
-                  <div className="relative z-10 p-4 md:p-6">
+                  <div className="relative z-10 p-4 md:p-6 pt-6 md:pt-8">
                     {/* Header */}
                     <div className="text-center mb-6 md:mb-8">
-                      {/* Popular Badge - Positioned above icon */}
-                      {path.popular && (
-                        <motion.div 
-                          className="flex justify-center mb-3 md:mb-4"
-                          initial={{ y: -10, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ delay: 0.5 }}
-                        >
-                          <div className="gradient-hero px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-white font-bold text-xs md:text-sm shadow-luxury animate-pulse-glow">
-                            <Star className="w-3 h-3 md:w-4 md:h-4 inline mr-1 md:mr-2" />
-                            {path.badge}
-                          </div>
-                        </motion.div>
-                      )}
-
                       <motion.div
                         className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl ${path.gradient} mx-auto mb-4 md:mb-6 flex items-center justify-center shadow-luxury`}
                         whileHover={{ rotate: 10, scale: 1.1 }}
