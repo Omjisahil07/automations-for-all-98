@@ -16,7 +16,7 @@ import { SectionDivider } from "@/components/ui/section-divider";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative bg-background text-foreground">
+    <div className="min-h-screen relative bg-background text-foreground overflow-x-hidden">
       {/* Scroll Progress Indicator */}
       <ScrollProgress />
 

@@ -165,9 +165,9 @@ export const HeroContent = () => {
             <MagneticButton strength={0.2}>
               <MovingButton
                 borderRadius="1.5rem"
-                width="18rem"
+                width="100%"
                 height="1.5rem"
-                className="text-base md:text-lg px-4 md:px-6 py-2 md:py-3 rounded-xl glass-card w-full sm:w-auto"
+                className="text-base md:text-lg px-4 md:px-6 py-2 md:py-3 rounded-xl glass-card max-w-xs sm:max-w-sm"
               >
                 Start Your AI Journey Today
               </MovingButton>
@@ -197,7 +197,7 @@ export const HeroContent = () => {
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold gradient-primary bg-clip-text text-transparent whitespace-nowrap">
+                <div className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
                   <CountUp end={stat.end} suffix={stat.suffix} duration={2.5} />
                 </div>
                 <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground group-hover:text-white transition-colors leading-tight">
