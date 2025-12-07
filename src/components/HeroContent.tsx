@@ -75,20 +75,20 @@ const itemVariants = {
 
 export const HeroContent = () => {
   return (
-    <div className="relative z-10 container mx-auto px-4 py-16 md:py-24 lg:py-32">
-      {/* Floating Orbs Background */}
-      <FloatingOrbs count={5} className="opacity-30" />
+    <div className="relative z-10 container mx-auto px-4 py-12 md:py-20 lg:py-28 flex items-center min-h-[85vh] md:min-h-screen">
+      {/* Floating Orbs Background - Less on mobile */}
+      <FloatingOrbs count={3} className="opacity-20 md:opacity-30" />
       
       <motion.div 
-        className="text-center space-y-6 max-w-6xl mx-auto"
+        className="text-center space-y-4 md:space-y-6 max-w-6xl mx-auto w-full"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Pre-headline */}
-        <motion.div className="mb-4 sm:mb-4" variants={itemVariants}>
+        <motion.div className="mb-2 sm:mb-3" variants={itemVariants}>
           <motion.div 
-            className="inline-flex items-center space-x-2 px-3 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury mt-16 sm:mt-24 lg:-mt-4"
+            className="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury mt-12 sm:mt-16 lg:mt-0"
             whileHover={{ scale: 1.02, borderColor: "rgba(255,255,255,0.4)" }}
             transition={{ duration: 0.3 }}
           >
@@ -111,8 +111,8 @@ export const HeroContent = () => {
         </motion.div>
 
         {/* Main Headline */}
-        <motion.div className="space-y-4 md:space-y-6" variants={itemVariants}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-tight tracking-tight">
+        <motion.div className="space-y-2 md:space-y-4" variants={itemVariants}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-display font-black leading-tight tracking-tight">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ export const HeroContent = () => {
             </span>
             ,<br />
             <motion.span 
-              className="text-xl md:text-3xl lg:text-4xl text-muted-foreground text-white font-normal"
+              className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-muted-foreground text-white font-normal"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.7 }}
@@ -147,7 +147,7 @@ export const HeroContent = () => {
             </motion.span>
           </h1>
           <motion.p 
-            className="text-base md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto font-light px-2"
             variants={itemVariants}
           >
             Learn to create{" "}
@@ -160,14 +160,14 @@ export const HeroContent = () => {
         </motion.div>
 
         {/* CTA Section */}
-        <motion.div className="space-y-6 md:space-y-8" variants={itemVariants}>
-          <div className="flex gap-4 md:gap-6 justify-center items-center">
+        <motion.div className="space-y-4 md:space-y-6" variants={itemVariants}>
+          <div className="flex gap-3 md:gap-4 justify-center items-center">
             <MagneticButton strength={0.2}>
               <MovingButton
-                borderRadius="2rem"
-                width="20rem"
-                height="2rem"
-                className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-2xl glass-card w-full sm:w-auto"
+                borderRadius="1.5rem"
+                width="18rem"
+                height="1.5rem"
+                className="text-base md:text-lg px-4 md:px-6 py-2 md:py-3 rounded-xl glass-card w-full sm:w-auto"
               >
                 Start Your AI Journey Today
               </MovingButton>
@@ -175,7 +175,7 @@ export const HeroContent = () => {
           </div>
 
           <motion.div 
-            className="flex flex-row items-center justify-center mb-6 md:mb-10 w-full"
+            className="flex flex-row items-center justify-center mb-4 md:mb-6 w-full"
             variants={itemVariants}
           >
             <AnimatedTooltip items={students} />
@@ -183,7 +183,7 @@ export const HeroContent = () => {
 
           {/* Counters / Social Proof */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center pt-4 md:pt-6"
+            className="grid grid-cols-3 gap-2 md:gap-4 text-center pt-2 md:pt-4"
             variants={containerVariants}
           >
             {[
@@ -197,7 +197,7 @@ export const HeroContent = () => {
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-gradient-primary">
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gradient-primary">
                   <CountUp end={stat.end} suffix={stat.suffix} duration={2.5} />
                 </div>
                 <p className="text-xs md:text-sm text-muted-foreground group-hover:text-white transition-colors">

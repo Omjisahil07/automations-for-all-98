@@ -48,62 +48,44 @@ const FloatingShape = ({
 
 export const CleanMinimal = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-subtle overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-screen bg-gradient-subtle overflow-hidden">
       {/* Clean Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
 
       {/* Background Beams */}
       <BackgroundBeams className="absolute inset-0" />
 
-      {/* Floating Geometric Shapes */}
-      <div className="absolute inset-0">
+      {/* Floating Geometric Shapes - Hidden on mobile for cleaner look */}
+      <div className="absolute inset-0 hidden md:block">
         <FloatingShape
           shape="cube"
-          size="w-16 h-16"
+          size="w-12 h-12 lg:w-16 lg:h-16"
           position="top-20 left-20"
           delay={0}
         />
         <FloatingShape
           shape="sphere"
-          size="w-12 h-12"
+          size="w-10 h-10 lg:w-12 lg:h-12"
           position="top-40 right-32"
           delay={1.5}
         />
         <FloatingShape
           shape="triangle"
-          size="w-20 h-20"
+          size="w-16 h-16 lg:w-20 lg:h-20"
           position="bottom-32 left-40"
           delay={3}
         />
         <FloatingShape
           shape="cube"
-          size="w-8 h-8"
+          size="w-6 h-6 lg:w-8 lg:h-8"
           position="top-1/2 right-20"
           delay={2.5}
         />
         <FloatingShape
           shape="sphere"
-          size="w-24 h-24"
+          size="w-20 h-20 lg:w-24 lg:h-24"
           position="bottom-40 right-1/4"
           delay={4}
-        />
-        <FloatingShape
-          shape="triangle"
-          size="w-14 h-14"
-          position="top-32 left-1/3"
-          delay={1}
-        />
-        <FloatingShape
-          shape="cube"
-          size="w-10 h-10"
-          position="bottom-60 left-1/4"
-          delay={3.5}
-        />
-        <FloatingShape
-          shape="sphere"
-          size="w-18 h-18"
-          position="top-60 right-1/3"
-          delay={2}
         />
       </div>
 
@@ -121,10 +103,10 @@ export const CleanMinimal = () => {
         />
       </div> */}
 
-      {/* Subtle Glow Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+      {/* Subtle Glow Effects - Smaller on mobile */}
+      <div className="absolute top-1/4 left-1/4 w-48 h-48 md:w-96 md:h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
       <div
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl animate-pulse"
+        className="absolute bottom-1/4 right-1/4 w-40 h-40 md:w-80 md:h-80 bg-secondary/5 rounded-full blur-3xl animate-pulse"
         style={{ animationDelay: "2s" }}
       />
 
