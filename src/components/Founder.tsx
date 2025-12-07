@@ -96,7 +96,7 @@ const Founder = () => {
                   Ambesh Tiwari is Entrepreneur by mind & a mentor by heart. He
                   is founder of Automation School and BDA Technologies Pvt Ltd,
                   where he helps entrepreneurs, professionals, and businesses
-                  use AI automation to eliminate repetitive work and scale
+                  use Agentic AI to eliminate repetitive work and scale
                   faster.
                 </p>
                 <p>

@@ -20,12 +20,12 @@ const Pricing = () => {
       bestFor:
         "Beginners and professionals who want to get hands-on results immediately.",
       promise:
-        "Build and deploy your first powerful AI automation in a single weekend. You'll walk away with a tangible skill and a clear understanding of the opportunity.",
+        "Build and deploy your first powerful Agentic AI in a single weekend. You'll walk away with a tangible skill and a clear understanding of the opportunity.",
       features: [
         "An intensive live weekend workshop in Delhi.",
         "Build one complete, real-world automation from start to finish.",
         "Step-by-step guidance directly from our expert instructors.",
-        "Become a certified AI Automation expert in 2 days",
+        "Become a certified Agentic AI expert in 2 days",
       ],
       cta: "Perfect for getting a quick, powerful win.",
       popular: false,
@@ -33,16 +33,16 @@ const Pricing = () => {
       glowColor: "primary",
     },
     {
-      title: "AI Automation Mastery",
+      title: "Agentic AI Mastery",
       subtitle: "The Flagship Course",
       price: "₹59,999",
       originalPrice: "₹99,999",
       badge: "MOST POPULAR",
       icon: Crown,
       bestFor:
-        "Freelancers, agency owners, and professionals who are serious about building a high-income career in AI automation.",
+        "Freelancers, agency owners, and professionals who are serious about building a high-income career in Agentic AI.",
       promise:
-        "Go from beginner to a certified, in-demand AI Automation Professional in 90 days. Master the complete Client-Ready AI Systems™ framework, build a robust portfolio, and learn to confidently pitch, price, and win high-value clients.",
+        "Go from beginner to a certified, in-demand Agentic AI Professional in 90 days. Master the complete Client-Ready AI Systems™ framework, build a robust portfolio, and learn to confidently pitch, price, and win high-value clients.",
       features: [
         "90-day comprehensive curriculum with live and on-demand lessons.",
         "Build a portfolio of 5+ advanced, client-ready automations.",
@@ -167,15 +167,15 @@ const Pricing = () => {
                 }`}
               >
                 <div className="relative overflow-visible rounded-3xl h-full">
-                  {/* Popular Badge */}
+                  {/* Popular Badge - On Border */}
                   {path.popular && (
                     <motion.div 
-                      className="absolute -top-3 md:-top-4 left-1/2 transform -translate-x-1/2 z-20"
+                      className="absolute -top-4 md:-top-5 left-1/2 transform -translate-x-1/2 z-20"
                       initial={{ y: -20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <div className="gradient-hero px-2 md:px-3 py-1 md:py-2 rounded-full text-white font-bold text-xs md:text-sm shadow-luxury animate-pulse-glow">
+                      <div className="gradient-hero px-4 md:px-5 py-2 md:py-2.5 rounded-full text-white font-bold text-xs md:text-sm shadow-luxury animate-pulse-glow border-2 border-background">
                         <Star className="w-3 h-3 md:w-4 md:h-4 inline mr-1 md:mr-2" />
                         {path.badge}
                       </div>
