@@ -197,7 +197,7 @@ export const HeroContent = () => {
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gradient-primary">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold gradient-primary bg-clip-text text-transparent">
                   <CountUp end={stat.end} suffix={stat.suffix} duration={2.5} />
                 </div>
                 <p className="text-xs md:text-sm text-muted-foreground group-hover:text-white transition-colors">

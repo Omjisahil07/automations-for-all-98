@@ -182,7 +182,7 @@ const Footer = () => {
 
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <span>Built by</span>
-              <span>BDA Technologies</span>
+              <span>BDA Technologies Private Limited.</span>
             </div>
           </div>
         </div>
