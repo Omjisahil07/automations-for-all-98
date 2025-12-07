@@ -75,7 +75,7 @@ const itemVariants = {
 
 export const HeroContent = () => {
   return (
-    <div className="relative z-10 container mx-auto px-4 py-12 md:py-20 lg:py-28 flex items-center min-h-[85vh] md:min-h-screen">
+    <div className="relative z-10 container mx-auto px-4 pt-20 pb-8 md:py-20 lg:py-28 flex items-center min-h-[85vh] md:min-h-screen">
       {/* Floating Orbs Background - Less on mobile */}
       <FloatingOrbs count={3} className="opacity-20 md:opacity-30" />
       
@@ -88,7 +88,7 @@ export const HeroContent = () => {
         {/* Pre-headline */}
         <motion.div className="mb-2 sm:mb-3" variants={itemVariants}>
           <motion.div 
-            className="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury mt-12 sm:mt-16 lg:mt-0"
+            className="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full glass-card backdrop-blur-xl border border-white/20 shadow-luxury"
             whileHover={{ scale: 1.02, borderColor: "rgba(255,255,255,0.4)" }}
             transition={{ duration: 0.3 }}
           >
