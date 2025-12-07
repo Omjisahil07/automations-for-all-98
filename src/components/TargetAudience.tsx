@@ -19,7 +19,7 @@ const TargetAudience = () => {
       title: "Agency Owners",
       subtitle: "Scale Your Business",
       description:
-        "Add AI automations to your service suite. Raise your rates. Win bigger contracts.",
+        "Add Agent AI to your service suite. Raise your rates. Win bigger contracts.",
       gradient: "gradient-accent",
       color: "text-accent",
     },

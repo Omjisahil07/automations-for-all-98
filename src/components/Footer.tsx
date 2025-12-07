@@ -17,7 +17,7 @@ const Footer = () => {
 
   const footerLinks = {
     courses: [
-      { name: "AI Automation Mastery", href: "#" },
+      { name: "Agent AI Mastery", href: "#" },
       { name: "The Bootcamp", href: "#" },
       { name: "Automation Accelerator", href: "#" },
       { name: "Free Resources", href: "#" },
