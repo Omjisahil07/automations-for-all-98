@@ -15,9 +15,9 @@ import FinalTestimonial from "@/components/FinalTestimonial";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="min-h-screen  relative">
       {/* Site-wide Matrix Background */}
-      <MatrixBackground />
+      {/* <MatrixBackground /> */}
 
       {/* Header */}
       <Header />
