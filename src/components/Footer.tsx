@@ -17,7 +17,7 @@ const Footer = () => {
 
   const footerLinks = {
     courses: [
-      { name: "Agent AI Mastery", href: "#" },
+      { name: "AI Automation Mastery", href: "#" },
       { name: "The Bootcamp", href: "#" },
       { name: "Automation Accelerator", href: "#" },
       { name: "Free Resources", href: "#" },
@@ -182,7 +182,7 @@ const Footer = () => {
 
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <span>Built by</span>
-              <span>BDA Technologies Private Limited.</span>
+              <span>BDA Technologies</span>
             </div>
           </div>
         </div>

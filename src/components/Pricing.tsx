@@ -20,12 +20,12 @@ const Pricing = () => {
       bestFor:
         "Beginners and professionals who want to get hands-on results immediately.",
       promise:
-        "Build and deploy your first powerful Agent AI in a single weekend. You'll walk away with a tangible skill and a clear understanding of the opportunity.",
+        "Build and deploy your first powerful AI automation in a single weekend. You'll walk away with a tangible skill and a clear understanding of the opportunity.",
       features: [
         "An intensive live weekend workshop in Delhi.",
         "Build one complete, real-world automation from start to finish.",
         "Step-by-step guidance directly from our expert instructors.",
-        "Become a certified Agent AI expert in 2 days",
+        "Become a certified AI Automation expert in 2 days",
       ],
       cta: "Perfect for getting a quick, powerful win.",
       popular: false,
@@ -33,16 +33,16 @@ const Pricing = () => {
       glowColor: "primary",
     },
     {
-      title: "Agent AI Mastery",
+      title: "AI Automation Mastery",
       subtitle: "The Flagship Course",
       price: "₹59,999",
       originalPrice: "₹99,999",
       badge: "MOST POPULAR",
       icon: Crown,
       bestFor:
-        "Freelancers, agency owners, and professionals who are serious about building a high-income career in Agent AI.",
+        "Freelancers, agency owners, and professionals who are serious about building a high-income career in AI automation.",
       promise:
-        "Go from beginner to a certified, in-demand Agent AI Professional in 90 days. Master the complete Client-Ready AI Systems™ framework, build a robust portfolio, and learn to confidently pitch, price, and win high-value clients.",
+        "Go from beginner to a certified, in-demand AI Automation Professional in 90 days. Master the complete Client-Ready AI Systems™ framework, build a robust portfolio, and learn to confidently pitch, price, and win high-value clients.",
       features: [
         "90-day comprehensive curriculum with live and on-demand lessons.",
         "Build a portfolio of 5+ advanced, client-ready automations.",
@@ -160,9 +160,9 @@ const Pricing = () => {
               className="group"
             >
               <CardSpotlight
-                className={`h-full relative ${
+                className={`h-full ${
                   path.popular
-                    ? "border-2 border-primary"
+                    ? "border-2 border-primary/30"
                     : ""
                 }`}
               >
