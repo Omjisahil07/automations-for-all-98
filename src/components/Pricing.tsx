@@ -1,6 +1,10 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useAnimations";
 import { Crown, Star, Gift, Clock, Users, Trophy } from "lucide-react";
+import { CardSpotlight } from "./ui/card-spotlight";
+import { MagneticButton } from "./ui/magnetic-button";
+import { FloatingOrbs } from "./ui/floating-orbs";
 
 const Pricing = () => {
   useScrollReveal();
@@ -74,10 +78,32 @@ const Pricing = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
     <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 "></div>
-
+      {/* Floating Orbs */}
+      <FloatingOrbs count={4} className="opacity-20" />
+      
       {/* Animated Pricing Background */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -89,17 +115,26 @@ const Pricing = () => {
             radial-gradient(circle at 40% 40%, hsl(142 71% 45% / 0.2) 0%, transparent 50%)
           `,
           }}
-        ></div>
+        />
       </div>
 
       <div className="container mx-auto px-4 max-w-8xl relative z-10">
-        <div className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16 lg:mb-20 scroll-reveal">
-          <div className="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 rounded-full glass-card backdrop-blur-xl border border-primary/20">
+        <motion.div 
+          className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16 lg:mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 rounded-full glass-card backdrop-blur-xl border border-primary/20"
+            whileHover={{ scale: 1.05 }}
+          >
             <Trophy className="w-4 h-4 md:w-5 md:h-5 text-primary animate-pulse-glow" />
             <span className="text-xs md:text-sm font-medium text-primary">
               CHOOSE YOUR PATH
             </span>
-          </div>
+          </motion.div>
 
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black leading-tight">
             Choose Your Path to Becoming an{" "}
@@ -109,151 +144,196 @@ const Pricing = () => {
             Whether you want to start fast, go deep, or learn on your own
             schedule, there's a path designed for your goals.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {paths.map((path, index) => (
-            <div
+            <motion.div
               key={index}
-              className="scroll-reveal group"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              variants={cardVariants}
+              className="group"
             >
-              <div
-                className={`relative overflow-visible rounded-3xl transition-luxury ${
+              <CardSpotlight
+                className={`h-full ${
                   path.popular
-                    ? "glass-card border-2 border-primary/30 shadow-luxury hover:shadow-glow transform hover:scale-105"
-                    : "glass-card hover-lift"
+                    ? "border-2 border-primary/30"
+                    : ""
                 }`}
               >
-                {/* Popular Badge */}
-                {path.popular && (
-                  <div className="absolute -top-3 md:-top-4 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="gradient-hero px-2 md:px-3 py-1 md:py-2 rounded-full text-white font-bold text-xs md:text-sm shadow-luxury animate-pulse-glow">
-                      <Star className="w-3 h-3 md:w-4 md:h-4 inline mr-1 md:mr-2" />
-                      {path.badge}
-                    </div>
-                  </div>
-                )}
-
-                {/* Background Gradient */}
-                <div
-                  className={`absolute top-0 right-0 w-40 h-40 ${path.gradient} opacity-5 rounded-full blur-3xl`}
-                ></div>
-
-                <div className="relative z-10 p-4 md:p-6">
-                  {/* Header */}
-                  <div className="text-center mb-6 md:mb-8">
-                    <div
-                      className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl ${path.gradient} mx-auto mb-4 md:mb-6 flex items-center justify-center shadow-luxury group-hover:animate-pulse-glow`}
+                <div className="relative overflow-visible rounded-3xl h-full">
+                  {/* Popular Badge */}
+                  {path.popular && (
+                    <motion.div 
+                      className="absolute -top-3 md:-top-4 left-1/2 transform -translate-x-1/2 z-20"
+                      initial={{ y: -20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.5 }}
                     >
-                      <path.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                    </div>
-
-                    <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">
-                      {path.title}
-                    </h3>
-                    <p className="text-base md:text-lg text-muted-foreground mb-4">
-                      {path.subtitle}
-                    </p>
-
-                    {/* Pricing */}
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center justify-center space-x-2 md:space-x-4">
-                        <span className="text-3xl md:text-4xl lg:text-4xl font-heading font-black gradient-hero bg-clip-text text-transparent">
-                          {path.price}
-                        </span>
-                        <span className="text-lg md:text-xl lg:text-2xl text-muted-foreground line-through">
-                          {path.originalPrice}
-                        </span>
+                      <div className="gradient-hero px-2 md:px-3 py-1 md:py-2 rounded-full text-white font-bold text-xs md:text-sm shadow-luxury animate-pulse-glow">
+                        <Star className="w-3 h-3 md:w-4 md:h-4 inline mr-1 md:mr-2" />
+                        {path.badge}
                       </div>
-                      <div className="inline-flex items-center space-x-2 px-3 md:px-4 py-1 md:py-2 rounded-full glass-card border border-success/20">
-                        <Gift className="w-3 h-3 md:w-4 md:h-4 text-success" />
-                        <span className="text-xs md:text-sm font-medium text-success">
-                          50% Scholarship
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  )}
 
-                  {/* Content */}
-                  <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
-                    <div className="glass-card p-3 md:p-4 rounded-2xl border border-accent/10">
-                      <p className="font-semibold text-xs text-accent mb-1">
-                        THE PROMISE:
-                      </p>
-                      <p className="text-xs leading-relaxed">{path.promise}</p>
-                    </div>
+                  {/* Background Gradient */}
+                  <div
+                    className={`absolute top-0 right-0 w-40 h-40 ${path.gradient} opacity-5 rounded-full blur-3xl`}
+                  />
 
-                    <div className="p-3 md:p-4 rounded-2xl border border-primary/10">
-                      <p className="font-semibold text-xs text-primary mb-1">
-                        BEST FOR:
-                      </p>
-                      <p className="text-xs leading-relaxed">{path.bestFor}</p>
-                    </div>
+                  <div className="relative z-10 p-4 md:p-6">
+                    {/* Header */}
+                    <div className="text-center mb-6 md:mb-8">
+                      <motion.div
+                        className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl ${path.gradient} mx-auto mb-4 md:mb-6 flex items-center justify-center shadow-luxury`}
+                        whileHover={{ rotate: 10, scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <path.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                      </motion.div>
 
-                    <div>
-                      <p className="font-semibold text-xs text-muted-foreground mb-2 md:mb-3">
-                        WHAT YOU GET:
+                      <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">
+                        {path.title}
+                      </h3>
+                      <p className="text-base md:text-lg text-muted-foreground mb-4">
+                        {path.subtitle}
                       </p>
-                      <ul className="space-y-2">
-                        {path.features.map((feature, featureIndex) => (
-                          <li
-                            key={featureIndex}
-                            className="flex items-start space-x-2 md:space-x-3 text-sm"
+
+                      {/* Pricing */}
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center justify-center space-x-2 md:space-x-4">
+                          <motion.span 
+                            className="text-3xl md:text-4xl lg:text-4xl font-heading font-black gradient-hero bg-clip-text text-transparent"
+                            initial={{ scale: 0.8 }}
+                            whileInView={{ scale: 1 }}
+                            viewport={{ once: true }}
                           >
-                            <div className="w-4 h-4 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <span className="text-white text-xs">✓</span>
-                            </div>
-                            <span className="leading-relaxed">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                            {path.price}
+                          </motion.span>
+                          <span className="text-lg md:text-xl lg:text-2xl text-muted-foreground line-through">
+                            {path.originalPrice}
+                          </span>
+                        </div>
+                        <motion.div 
+                          className="inline-flex items-center space-x-2 px-3 md:px-4 py-1 md:py-2 rounded-full glass-card border border-success/20"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <Gift className="w-3 h-3 md:w-4 md:h-4 text-success" />
+                          <span className="text-xs md:text-sm font-medium text-success">
+                            50% Scholarship
+                          </span>
+                        </motion.div>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* CTA Section */}
-                  <div className="border-t border-border/50 pt-4">
-                    <p className="text-xs font-medium text-center mb-3 md:mb-4 gradient-accent bg-clip-text text-transparent">
-                      {path.cta}
-                    </p>
-                    <Button
-                      variant={path.popular ? "hero" : "cta"}
-                      className="w-full rounded-full py-3 md:py-4 text-base md:text-lg font-bold shadow-luxury hover:shadow-glow"
-                      size="default"
-                    >
-                      Choose This Path
-                    </Button>
+                    {/* Content */}
+                    <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
+                      <div className="glass-card p-3 md:p-4 rounded-2xl border border-accent/10">
+                        <p className="font-semibold text-xs text-accent mb-1">
+                          THE PROMISE:
+                        </p>
+                        <p className="text-xs leading-relaxed">{path.promise}</p>
+                      </div>
+
+                      <div className="p-3 md:p-4 rounded-2xl border border-primary/10">
+                        <p className="font-semibold text-xs text-primary mb-1">
+                          BEST FOR:
+                        </p>
+                        <p className="text-xs leading-relaxed">{path.bestFor}</p>
+                      </div>
+
+                      <div>
+                        <p className="font-semibold text-xs text-muted-foreground mb-2 md:mb-3">
+                          WHAT YOU GET:
+                        </p>
+                        <ul className="space-y-2">
+                          {path.features.map((feature, featureIndex) => (
+                            <motion.li
+                              key={featureIndex}
+                              className="flex items-start space-x-2 md:space-x-3 text-sm"
+                              initial={{ opacity: 0, x: -10 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: featureIndex * 0.1 }}
+                            >
+                              <div className="w-4 h-4 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span className="text-white text-xs">✓</span>
+                              </div>
+                              <span className="leading-relaxed">{feature}</span>
+                            </motion.li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* CTA Section */}
+                    <div className="border-t border-border/50 pt-4">
+                      <p className="text-xs font-medium text-center mb-3 md:mb-4 gradient-accent bg-clip-text text-transparent">
+                        {path.cta}
+                      </p>
+                      <MagneticButton strength={0.15} className="w-full">
+                        <Button
+                          variant={path.popular ? "hero" : "cta"}
+                          className="w-full rounded-full py-3 md:py-4 text-base md:text-lg font-bold shadow-luxury hover:shadow-glow"
+                          size="default"
+                        >
+                          Choose This Path
+                        </Button>
+                      </MagneticButton>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </CardSpotlight>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Final CTA */}
-        <div className="text-center scroll-reveal">
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="glass-card rounded-3xl p-6 md:p-8 lg:p-12 max-w-4xl mx-auto backdrop-blur-xl border border-primary/20 shadow-luxury">
             <div className="space-y-4 md:space-y-6">
-              <Button
-                variant="hero"
-                size="lg"
-                className="text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-full shadow-luxury hover:shadow-glow w-full sm:w-auto"
-              >
-                Start My AI Journey Today
-              </Button>
+              <MagneticButton>
+                <Button
+                  variant="hero"
+                  size="lg"
+                  className="text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-full shadow-luxury hover:shadow-glow w-full sm:w-auto"
+                >
+                  Start My AI Journey Today
+                </Button>
+              </MagneticButton>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 md:space-x-8 text-sm font-medium">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-glow"></div>
+                <motion.div 
+                  className="flex items-center space-x-2"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <div className="w-3 h-3 bg-green-500 rounded-full" />
                   <span>7-Day Risk-Free Guarantee</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-primary rounded-full animate-pulse-glow"></div>
+                </motion.div>
+                <motion.div 
+                  className="flex items-center space-x-2"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                >
+                  <div className="w-3 h-3 bg-primary rounded-full" />
                   <span>Join 1,000+ Successful Learners</span>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
