@@ -140,7 +140,7 @@ const Header = () => {
           animate={isMenuOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
           className="md:hidden overflow-hidden"
         >
-          <div className="border-t border-white/10 py-4">
+          <div className="border-t border-white/10 py-4 bg-background/95 backdrop-blur-xl">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item, index) => (
                 <motion.button
@@ -167,6 +167,17 @@ const Header = () => {
           </div>
         </motion.div>
       </div>
+      
+      {/* Mobile Menu Backdrop */}
+      {isMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm -z-10 md:hidden"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
     </motion.header>
   );
 };
