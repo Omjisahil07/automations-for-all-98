@@ -162,7 +162,7 @@ const Pricing = () => {
               {/* Popular Badge - Outside CardSpotlight, on the border */}
               {path.popular && (
                 <motion.div 
-                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-30"
+                  className="absolute -top-4 left-0 right-0 flex justify-center z-30"
                   initial={{ y: -10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.5 }}
