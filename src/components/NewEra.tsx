@@ -1,22 +1,69 @@
-import { useScrollReveal } from "@/hooks/useAnimations";
-import { TrendingUp, Users, Building, Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
+import { TrendingUp, Users, Briefcase } from "lucide-react";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
+import { FloatingOrbs } from "@/components/ui/floating-orbs";
+
+const features = [
+  {
+    icon: TrendingUp,
+    title: "Works smarter,",
+    highlight: "not harder.",
+    highlightClass: "text-primary",
+    description: "Leverage AI to automate complex workflows while you focus on strategy and growth.",
+    gradient: "gradient-primary",
+  },
+  {
+    icon: Briefcase,
+    title: "Gets paid for",
+    highlight: "ideas, not hours.",
+    highlightClass: "text-accent",
+    description: "Create value through intelligent solutions that scale beyond your time investment.",
+    gradient: "gradient-accent",
+  },
+  {
+    icon: Users,
+    title: "Builds solutions once…",
+    highlight: "and earns from them again and again.",
+    highlightClass: "gradient-hero bg-clip-text text-transparent",
+    description: "Create scalable automation systems that generate recurring revenue streams.",
+    gradient: "gradient-hero",
+  },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+};
 
 const NewEra = () => {
-  useScrollReveal();
-
   return (
     <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-background/5"></div>
-
-      {/* Floating Background Elements */}
-      <div className="absolute top-20 left-1/4 w-64 h-64 rounded-full gradient-primary opacity-5 blur-3xl floating-element"></div>
-      <div
-        className="absolute bottom-20 right-1/4 w-96 h-96 rounded-full gradient-accent opacity-5 blur-3xl floating-element"
-        style={{ animationDelay: "2s" }}
-      ></div>
+      <FloatingOrbs count={4} />
 
       <div className="container mx-auto px-4 max-w-8xl relative z-10">
-        <div className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16 lg:mb-20 scroll-reveal">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16 lg:mb-20"
+        >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black leading-tight">
             A New Era of Work Has <span className="text-shimmer">Begun.</span>
           </h2>
@@ -31,73 +78,46 @@ const NewEra = () => {
               </span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-          <div className="scroll-reveal group">
-            <div className="glass-card p-6 md:p-8 lg:p-12 rounded-3xl hover-lift transition-luxury h-full">
-              <div className="text-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full gradient-primary mx-auto mb-6 md:mb-8 flex items-center justify-center group-hover:animate-pulse-glow">
-                  <TrendingUp className="w-8 h-8 md:w-10 md:h-10 text-white" />
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16"
+        >
+          {features.map((feature, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <CardSpotlight className="h-full">
+                <div className="p-6 md:p-8 lg:p-12 text-center relative z-10">
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className={`w-16 h-16 md:w-20 md:h-20 rounded-full ${feature.gradient} mx-auto mb-6 md:mb-8 flex items-center justify-center`}
+                  >
+                    <feature.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                  </motion.div>
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-heading font-bold mb-4 md:mb-6 leading-tight">
+                    {feature.title}{" "}
+                    <span className={feature.highlightClass}>{feature.highlight}</span>
+                  </h3>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-lg md:text-xl lg:text-2xl font-heading font-bold mb-4 md:mb-6 leading-tight">
-                  Works smarter,{" "}
-                  <span className="text-primary">not harder.</span>
-                </h3>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Leverage AI to automate complex workflows while you focus on
-                  strategy and growth.
-                </p>
-              </div>
-            </div>
-          </div>
+              </CardSpotlight>
+            </motion.div>
+          ))}
+        </motion.div>
 
-          <div
-            className="scroll-reveal group"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <div className="glass-card p-6 md:p-8 lg:p-12 rounded-3xl hover-lift transition-luxury h-full">
-              <div className="text-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full gradient-accent mx-auto mb-6 md:mb-8 flex items-center justify-center group-hover:animate-pulse-glow">
-                  <Briefcase className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                </div>
-                <h3 className="text-lg md:text-xl lg:text-2xl font-heading font-bold mb-4 md:mb-6 leading-tight">
-                  Gets paid for{" "}
-                  <span className="text-accent">ideas, not hours.</span>
-                </h3>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Create value through intelligent solutions that scale beyond
-                  your time investment.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="scroll-reveal group"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <div className="glass-card p-6 md:p-8 lg:p-12 rounded-3xl hover-lift transition-luxury h-full">
-              <div className="text-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full gradient-hero mx-auto mb-6 md:mb-8 flex items-center justify-center group-hover:animate-pulse-glow">
-                  <Users className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                </div>
-                <h3 className="text-lg md:text-xl lg:text-2xl font-heading font-bold mb-4 md:mb-6 leading-tight">
-                  Builds solutions once…{" "}
-                  <span className="gradient-hero bg-clip-text text-transparent">
-                    and earns from them again and again.
-                  </span>
-                </h3>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Create scalable automation systems that generate recurring
-                  revenue streams.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center scroll-reveal">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center"
+        >
           <div className="glass-card rounded-2xl p-6 md:p-8 lg:p-12 max-w-4xl mx-auto backdrop-blur-xl border border-accent/20">
             <p className="text-xl md:text-2xl lg:text-3xl font-heading font-bold">
               The only question:{" "}
@@ -105,7 +125,7 @@ const NewEra = () => {
               <span className="text-destructive">be left behind?</span>
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
