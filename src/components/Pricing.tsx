@@ -160,9 +160,9 @@ const Pricing = () => {
               className="group"
             >
               <CardSpotlight
-                className={`h-full ${
+                className={`h-full relative ${
                   path.popular
-                    ? "border-2 border-primary/30"
+                    ? "border-2 border-primary"
                     : ""
                 }`}
               >
