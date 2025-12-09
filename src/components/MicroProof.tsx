@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const stats = [
   "Students automated 300+ workflows",
@@ -73,9 +74,11 @@ const MicroProof = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Button variant="cta" size="lg" className="text-base md:text-lg">
-              I Want This Skill
-            </Button>
+            <Link to="/choose">
+              <Button variant="cta" size="lg" className="text-base md:text-lg">
+                I Want This Skill
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

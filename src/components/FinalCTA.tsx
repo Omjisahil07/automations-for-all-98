@@ -3,6 +3,7 @@ import { Rocket, Sparkles, Globe } from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { FloatingOrbs } from "@/components/ui/floating-orbs";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { Link } from "react-router-dom";
 
 const FinalCTA = () => {
   return (
@@ -84,16 +85,18 @@ const FinalCTA = () => {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="flex flex-col gap-4 md:gap-6 justify-center items-center pt-2 md:pt-4"
           >
-            <MagneticButton strength={0.3}>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="text-lg md:text-xl lg:text-2xl px-8 md:px-12 lg:px-16 py-4 md:py-6 lg:py-8 rounded-full group shadow-luxury hover:shadow-glow gradient-primary text-white font-bold flex items-center gap-3 md:gap-4"
-              >
-                <Rocket className="w-6 h-6 md:w-8 md:h-8 group-hover:animate-pulse-glow" />
-                Join Automation School Today
-              </motion.button>
-            </MagneticButton>
+            <Link to="/choose">
+              <MagneticButton strength={0.3}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="text-lg md:text-xl lg:text-2xl px-8 md:px-12 lg:px-16 py-4 md:py-6 lg:py-8 rounded-full group shadow-luxury hover:shadow-glow gradient-primary text-white font-bold flex items-center gap-3 md:gap-4"
+                >
+                  <Rocket className="w-6 h-6 md:w-8 md:h-8 group-hover:animate-pulse-glow" />
+                  Start My AI Journey
+                </motion.button>
+              </MagneticButton>
+            </Link>
 
             <motion.div
               initial={{ opacity: 0 }}

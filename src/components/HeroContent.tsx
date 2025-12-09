@@ -3,6 +3,7 @@ import { MovingButton } from "./ui/moving-border";
 import { Sparkles, CheckCircle } from "lucide-react";
 import { FloatingOrbs } from "./ui/floating-orbs";
 import { MagneticButton } from "./ui/magnetic-button";
+import { Link } from "react-router-dom";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -116,16 +117,18 @@ export const HeroContent = () => {
         {/* CTA Section */}
         <motion.div className="space-y-4 md:space-y-6" variants={itemVariants}>
           <div className="flex flex-col gap-2 md:gap-3 justify-center items-center">
-            <MagneticButton strength={0.2}>
-              <MovingButton
-                borderRadius="1.5rem"
-                width="100%"
-                height="1.5rem"
-                className="text-base md:text-lg px-4 md:px-6 py-2 md:py-3 rounded-xl glass-card max-w-xs sm:max-w-sm"
-              >
-                🔥 Start Learning
-              </MovingButton>
-            </MagneticButton>
+            <Link to="/choose">
+              <MagneticButton strength={0.2}>
+                <MovingButton
+                  borderRadius="1.5rem"
+                  width="100%"
+                  height="1.5rem"
+                  className="text-base md:text-lg px-4 md:px-6 py-2 md:py-3 rounded-xl glass-card max-w-xs sm:max-w-sm"
+                >
+                  🔥 Start Learning
+                </MovingButton>
+              </MagneticButton>
+            </Link>
             <p className="text-xs sm:text-sm text-muted-foreground">
               No obligation. Limited seats.
             </p>
