@@ -9,6 +9,7 @@ import Solution from "@/components/Solution";
 import TargetAudience from "@/components/TargetAudience";
 import DemoMoment from "@/components/DemoMoment";
 import Testimonials from "@/components/Testimonials";
+import DecisionHelper from "@/components/DecisionHelper";
 import CourseOffering from "@/components/CourseOffering";
 import Pricing from "@/components/Pricing";
 import Founder from "@/components/Founder";
@@ -50,6 +51,7 @@ const Index = () => {
         
         <div id="pricing">
           <Pricing />
+          <DecisionHelper />
           <CourseOffering />
         </div>
         
