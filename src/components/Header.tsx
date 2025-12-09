@@ -48,8 +48,8 @@ const Header = () => {
   ];
 
   const navItems = [
-    { name: "Success Stories", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Success Stories", href: "#testimonials", isRoute: false },
+    { name: "Contact", href: "/contact", isRoute: true },
   ];
 
   const scrollToSection = (href: string) => {
@@ -150,23 +150,33 @@ const Header = () => {
             </div>
 
             {navItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="relative text-sm font-medium text-muted-foreground hover:text-white transition-colors px-3 py-1 group"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: (index + 1) * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                {item.name}
-                <motion.span 
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.button>
+              item.isRoute ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="relative text-sm font-medium text-muted-foreground hover:text-white transition-colors px-3 py-1"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <motion.button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="relative text-sm font-medium text-muted-foreground hover:text-white transition-colors px-3 py-1 group"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: (index + 1) * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {item.name}
+                  <motion.span 
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+              )
             ))}
           </nav>
 
@@ -231,16 +241,27 @@ const Header = () => {
               
               <div className="border-t border-white/10 pt-4">
                 {navItems.map((item, index) => (
-                  <motion.button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href)}
-                    className="w-full text-left text-sm font-medium text-muted-foreground hover:text-white transition-colors hover:bg-primary/20 rounded-full px-4 py-2"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    {item.name}
-                  </motion.button>
+                  item.isRoute ? (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-white transition-colors hover:bg-primary/20 rounded-full px-4 py-2"
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <motion.button
+                      key={item.name}
+                      onClick={() => scrollToSection(item.href)}
+                      className="w-full text-left text-sm font-medium text-muted-foreground hover:text-white transition-colors hover:bg-primary/20 rounded-full px-4 py-2"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      {item.name}
+                    </motion.button>
+                  )
                 ))}
               </div>
               

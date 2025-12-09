@@ -108,80 +108,81 @@ const Choose = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto mb-12"
+            className="text-center max-w-4xl mx-auto mb-16"
           >
             <motion.div 
-              className="inline-flex items-center space-x-2 px-6 py-3 rounded-full glass-card border border-primary/20 mb-6"
+              className="inline-flex items-center space-x-2 px-6 py-3 rounded-full glass-card border border-primary/20 mb-8"
               whileHover={{ scale: 1.05 }}
             >
               <Sparkles className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium text-primary">CHOOSE YOUR PATH</span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black mb-8">
               Start Where{" "}
               <span className="gradient-primary bg-clip-text text-transparent">You Are</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground">
+            <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto">
               One skill. Four ways to learn. Pick the path that matches your goals and timeline.
             </p>
           </motion.div>
 
-          {/* Path Cards */}
+          {/* Path Cards - Desktop Optimized */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto"
           >
             {paths.map((path, index) => (
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="relative"
+                className="relative group"
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 {path.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
-                    <span className="px-4 py-1.5 text-xs font-bold rounded-full gradient-hero text-white">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+                    <span className="px-5 py-2 text-xs font-bold rounded-full gradient-hero text-white shadow-lg">
                       MOST POPULAR
                     </span>
                   </div>
                 )}
                 
-                <CardSpotlight className={`h-full ${path.popular ? 'border-2 border-primary/40' : ''}`}>
-                  <div className="p-6 h-full flex flex-col">
+                <CardSpotlight className={`h-full ${path.popular ? 'border-2 border-primary/40 shadow-xl shadow-primary/10' : ''}`}>
+                  <div className="p-8 h-full flex flex-col min-h-[520px]">
                     {/* Icon */}
-                    <div className={`w-14 h-14 rounded-xl ${path.gradient} flex items-center justify-center mb-4`}>
-                      <path.icon className="w-7 h-7 text-white" />
+                    <div className={`w-16 h-16 rounded-2xl ${path.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <path.icon className="w-8 h-8 text-white" />
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-heading font-bold mb-1">{path.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">{path.subtitle}</p>
+                    <h3 className="text-2xl font-heading font-bold mb-2">{path.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{path.subtitle}</p>
 
                     {/* Duration Badge */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted/50 text-xs font-medium mb-4 w-fit">
-                      <Clock className="w-3 h-3" />
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-muted/50 text-sm font-medium mb-5 w-fit">
+                      <Clock className="w-4 h-4" />
                       {path.duration}
                     </div>
 
                     {/* Price */}
-                    <div className="mb-4">
-                      <span className="text-2xl font-heading font-black gradient-primary bg-clip-text text-transparent">
+                    <div className="mb-5">
+                      <span className="text-3xl font-heading font-black gradient-primary bg-clip-text text-transparent">
                         {path.price}
                       </span>
                     </div>
 
                     {/* Ideal For */}
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
                       <span className="font-semibold text-foreground">Ideal for:</span> {path.idealFor}
                     </p>
 
                     {/* Features */}
-                    <ul className="space-y-2 mb-6 flex-grow">
+                    <ul className="space-y-3 mb-8 flex-grow">
                       {path.features.map((feature, fIndex) => (
-                        <li key={fIndex} className="flex items-center gap-2 text-sm">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <li key={fIndex} className="flex items-center gap-3 text-sm">
+                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -191,10 +192,11 @@ const Choose = () => {
                     <Link to={path.route}>
                       <Button
                         variant={path.popular ? "cta" : "outline"}
-                        className="w-full rounded-full group"
+                        size="lg"
+                        className="w-full rounded-full group/btn"
                       >
                         View Program
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
                     </Link>
                   </div>
@@ -208,15 +210,15 @@ const Choose = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-center mt-12"
+            className="text-center mt-16"
           >
-            <p className="text-muted-foreground mb-4">
+            <p className="text-lg text-muted-foreground mb-5">
               Not sure which path is right for you?
             </p>
             <Link to="/#pricing">
-              <Button variant="ghost" className="group">
+              <Button variant="ghost" size="lg" className="group text-lg">
                 Take the 30-second quiz
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </motion.div>
