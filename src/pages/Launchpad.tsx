@@ -25,8 +25,8 @@ const Launchpad = () => {
         ]}
       />
       
-      <div className="pt-8"> {/* Offset for scrolling bar */}
-        <Header />
+      <div className="pt-10"> {/* Offset for scrolling bar */}
+        <Header hasOfferBar={true} />
 
         <CourseHero
           tagline="For job seekers, freelancers, working professionals and small business owners"
