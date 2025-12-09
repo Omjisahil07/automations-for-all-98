@@ -10,6 +10,10 @@ import CourseTrainer from "@/components/course/CourseTrainer";
 import CoursePricing from "@/components/course/CoursePricing";
 import CourseFAQ from "@/components/course/CourseFAQ";
 import CourseFinalCTA from "@/components/course/CourseFinalCTA";
+import StickyCTA from "@/components/course/StickyCTA";
+import CountdownTimer from "@/components/course/CountdownTimer";
+import CertificateMockup from "@/components/course/CertificateMockup";
+import ProgressionLadder from "@/components/course/ProgressionLadder";
 
 const Accelerator = () => {
   return (
@@ -17,137 +21,188 @@ const Accelerator = () => {
       <Header />
 
       <CourseHero
-        tagline="4-Week Intensive Program"
-        headline="Automation"
-        headlineAccent="Accelerator"
-        subheadline="Go beyond basics. Build production-ready automation systems that scale your business while you focus on growth."
-        ctaText="Apply Now – ₹24,999"
+        tagline="14-Day Intensive Program"
+        headline="Take Your AI Skill From Basic to"
+        headlineAccent="Confident in 14 Days"
+        subheadline="Build multiple real automation systems step by step and become an Agentic AI Builder. No coding needed."
+        ctaText="Join the Accelerator"
         ctaLink="#pricing"
         trustItems={[
-          { icon: "calendar", text: "4 Weeks Live" },
-          { icon: "users", text: "Cohort-Based" },
-          { icon: "award", text: "1-on-1 Mentorship" },
+          { icon: "calendar", text: "14 Days" },
+          { icon: "users", text: "Hybrid Learning" },
+          { icon: "award", text: "Builder Certification" },
         ]}
       />
 
       <CourseAudience
-        headline="Perfect For You If..."
+        headline="This Is Ideal For You If..."
         audiences={[
-          "You've tried basic automations and want to go deeper",
-          "You're running a team and need scalable systems",
-          "You want to offer automation as a service",
-          "You're ready to invest 4 weeks to transform your workflow",
+          "You finished the Bootcamp and want the next level",
+          "You know AI basics and want to build real projects",
+          "You want to add automation to your job or freelance skill",
+          "You want a structured learning path instead of random videos",
+          "You want to build a portfolio to prove your skill",
         ]}
       />
 
       <CourseProblem
-        headline="The Plateau Problem"
+        headline="If You've Already Tried AI, This Is Your Next Level"
         problems={[
-          "You've built a few automations but they break constantly",
-          "Your workflows are messy and hard to maintain",
-          "You're not sure how to handle complex, multi-system processes",
-          "You need someone to guide you through advanced scenarios",
+          "Teams now want people who can build automation, not just prompts",
+          "Freelancers are charging for workflows, not theory",
+          "Companies are hiring for 'automation-ready' skills",
+          "Early builders get the best attention, roles and client work",
+          "This skill does not reward waiting - it rewards action",
         ]}
       />
 
       <CoursePromise
-        headline="What The Accelerator Delivers"
+        headline="In This Accelerator, You Will Build Real Automation That Works"
         promises={[
-          "Production-grade automation systems",
-          "Advanced error handling & monitoring",
-          "Multi-platform integrations (CRM, payments, AI)",
-          "Weekly 1-on-1 calls with Ambesh",
+          "Automated lead capture and follow-up",
+          "Sales follow-up or WhatsApp workflow",
+          "Content system for LinkedIn or marketing",
+          "HR or onboarding automation",
+          "Personal productivity workflows",
+          "One custom automation based on your work or interest",
         ]}
       />
 
       <CourseAgenda
-        headline="The 4-Week Journey"
+        headline="How The 14-Day Accelerator Works"
         modules={[
           {
-            title: "Week 1: Architecture & Strategy",
-            description: "Design automation systems that scale. Learn to map complex processes and identify the highest-ROI opportunities.",
+            title: "Short Easy Lessons",
+            description: "Follow at your own pace with clear, practical content designed for busy professionals.",
           },
           {
-            title: "Week 2: Advanced Workflows",
-            description: "Master conditional logic, loops, error handling, and multi-branch workflows that handle real-world complexity.",
+            title: "Weekly Live Sessions",
+            description: "Get support and learn advanced workflows with real-time guidance.",
           },
           {
-            title: "Week 3: AI Integration",
-            description: "Integrate ChatGPT, Claude, and other AI models into your workflows for intelligent automation.",
+            title: "Templates to Build On",
+            description: "Duplicate and customize ready-made workflows for your needs.",
           },
           {
-            title: "Week 4: Launch & Optimize",
-            description: "Deploy your systems, set up monitoring, and create documentation. Plus: building automation as a service.",
+            title: "Community Q&A",
+            description: "Ask questions, get feedback, and learn from other builders.",
+          },
+          {
+            title: "Help When You're Stuck",
+            description: "Dedicated support to ensure you complete your projects.",
+          },
+          {
+            title: "Portfolio Guidance",
+            description: "Document your builds professionally to showcase your skill.",
+          },
+        ]}
+      />
+
+      <ProgressionLadder
+        headline="Your Growth Path"
+        currentStep={2}
+        steps={[
+          {
+            title: "Step 1: Bootcamp",
+            description: "Build your first automation",
+            certification: "Agentic AI Starter Certification",
+          },
+          {
+            title: "Step 2: Accelerator",
+            description: "Build multiple systems and confidence",
+            certification: "Agentic AI Builder Certification",
+          },
+          {
+            title: "Step 3: Mastery",
+            description: "Get certified and go professional",
+            certification: "Certified Agentic AI Practitioner™",
           },
         ]}
       />
 
       <CourseOutcomes
-        headline="After 4 Weeks, You'll Have:"
+        headline="What You Will Walk Away With"
         outcomes={[
-          "5+ production-ready automation systems",
-          "Complete automation documentation & SOPs",
-          "Ability to handle complex multi-system workflows",
-          "Skills to offer automation consulting/services",
-          "Direct access to Ambesh for 90 days",
+          "Multiple working automation projects",
+          "Clear understanding of agentic workflows",
+          "Ability to apply automation at work or business",
+          "Confidence using tools like ChatGPT, Make, Zapier",
+          "Your first automation portfolio page",
+          "The Agentic AI Builder Certification",
         ]}
+      />
+
+      <CertificateMockup
+        title="Earn the Agentic AI Builder Certification"
+        certName="Agentic AI Builder"
+        description="Completing this program earns you the Agentic AI Builder Certification. This shows you can build automation that works - not just someone who attended training."
       />
 
       <CourseTrainer />
 
-      <CoursePricing
-        headline="Join The Accelerator"
-        price="₹24,999"
-        originalPrice="₹49,999"
-        badge="Next Cohort Starting Soon"
-        features={[
-          "4 Weeks of Live Training (12+ hours)",
-          "Weekly 1-on-1 Mentorship Calls",
-          "Private Slack Community Access",
-          "Production Templates & Frameworks",
-          "Lifetime Recording Access",
-          "90-Day Post-Program Support",
-          "Certificate of Completion",
-          "Bonus: Client Acquisition Playbook",
-        ]}
-        ctaText="Apply for Accelerator"
-        ctaLink="https://pages.razorpay.com/accelerator"
-      />
+      <div id="pricing">
+        <CountdownTimer label="Limited seats - Offer ends in" />
+        <CoursePricing
+          headline="Your Seat in the Accelerator"
+          price="₹14,999"
+          originalPrice="₹24,999"
+          badge="Bootcamp Grads Get Priority"
+          features={[
+            "14 days structured learning",
+            "Live sessions + recordings",
+            "Templates and reusable workflows",
+            "Agentic AI Builder Certification",
+            "Private support group",
+            "Access to updates and upgrades",
+            "Portfolio documentation help",
+          ]}
+          ctaText="Join the Accelerator"
+          ctaLink="https://pages.razorpay.com/accelerator"
+        />
+      </div>
 
       <CourseFAQ
         headline="Your Questions Answered"
         faqs={[
           {
-            question: "What's the time commitment?",
-            answer: "Plan for 8-10 hours per week: 3 hours live sessions + 5-7 hours of implementation.",
+            question: "Do I need to complete the Bootcamp first?",
+            answer: "No, but it helps. If you already know AI basics, you can start from here.",
           },
           {
-            question: "Do I need Bootcamp experience first?",
-            answer: "Not required, but you should have basic familiarity with automation tools like Make.com or Zapier.",
+            question: "Will there be recordings?",
+            answer: "Yes, live sessions are recorded. Learning content is self-paced.",
           },
           {
-            question: "How do the 1-on-1 calls work?",
-            answer: "You get 4 private 30-minute calls with Ambesh to discuss your specific challenges and projects.",
+            question: "Do I need coding knowledge?",
+            answer: "No. Everything is no-code.",
           },
           {
-            question: "What's the cohort size?",
-            answer: "We keep cohorts small (max 20 people) to ensure personalized attention.",
+            question: "How much time do I need daily?",
+            answer: "30-90 minutes depending on your pace.",
           },
           {
-            question: "Can I get a refund?",
-            answer: "Full refund available within 7 days if the program isn't right for you.",
+            question: "Will I build real projects?",
+            answer: "Yes. That is the core of this Accelerator.",
           },
         ]}
       />
 
       <CourseFinalCTA
-        headline="Ready to Accelerate?"
-        subheadline="Transform from automation dabbler to automation expert in just 4 weeks."
-        ctaText="Apply Now – Limited Spots"
+        headline="You Already Started Learning AI. Now Build With It."
+        subheadline="This is not the final step. It's the turning point. Complete the Accelerator and you'll be ready for Mastery."
+        ctaText="Join the Accelerator"
         ctaLink="https://pages.razorpay.com/accelerator"
       />
 
       <Footer />
+
+      <StickyCTA
+        courseName="Agentic AI Accelerator"
+        ctaText="Join Now"
+        ctaLink="https://pages.razorpay.com/accelerator"
+        seatsLeft={15}
+        nextBatchDate="Next cohort starting soon"
+      />
     </main>
   );
 };
