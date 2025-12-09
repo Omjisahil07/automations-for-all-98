@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, Sparkles, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -24,41 +19,49 @@ interface Question {
 const questions: Question[] = [
   {
     id: 1,
-    question: "What's your current experience with AI & automation?",
+    question: "What best describes you?",
     options: [
-      { label: "Complete beginner – I've heard of ChatGPT, that's about it", value: "beginner" },
-      { label: "Some experience – I've tried a few tools but nothing stuck", value: "some" },
-      { label: "Intermediate – I've built a few automations successfully", value: "intermediate" },
-      { label: "Advanced – I'm looking to master and monetize", value: "advanced" },
+      { label: "Freelancer", value: "freelancer" },
+      { label: "Working professional", value: "professional" },
+      { label: "Business owner", value: "business" },
+      { label: "Student", value: "student" },
     ],
   },
   {
     id: 2,
-    question: "What's your primary goal?",
+    question: "What is your main goal?",
     options: [
-      { label: "Save time on repetitive tasks", value: "time" },
-      { label: "Scale my business without hiring", value: "scale" },
-      { label: "Start an automation consulting business", value: "business" },
-      { label: "Just exploring what's possible", value: "explore" },
+      { label: "Learn automation for my career", value: "career" },
+      { label: "Offer automation as a paid service", value: "service" },
+      { label: "Automate my own business operations", value: "operations" },
+      { label: "Explore and learn out of interest", value: "explore" },
     ],
   },
   {
     id: 3,
-    question: "How much time can you invest weekly?",
+    question: "How much time can you commit weekly?",
     options: [
-      { label: "1-2 hours (just want quick wins)", value: "minimal" },
-      { label: "5-8 hours (ready to learn seriously)", value: "moderate" },
-      { label: "10-15+ hours (fully committed)", value: "high" },
+      { label: "1–2 hours", value: "minimal" },
+      { label: "3–5 hours", value: "moderate" },
+      { label: "6+ hours", value: "high" },
     ],
   },
   {
     id: 4,
-    question: "What's your budget for learning?",
+    question: "How do you prefer learning?",
     options: [
-      { label: "Free resources only for now", value: "free" },
-      { label: "Under ₹10,000", value: "low" },
-      { label: "₹10,000 – ₹50,000", value: "medium" },
-      { label: "₹50,000+ for the right program", value: "high" },
+      { label: "Live learning with support", value: "live" },
+      { label: "Step-by-step videos", value: "videos" },
+      { label: "Mix of both", value: "mix" },
+    ],
+  },
+  {
+    id: 5,
+    question: "How soon do you want results?",
+    options: [
+      { label: "This week", value: "fast" },
+      { label: "This month", value: "medium" },
+      { label: "No rush", value: "slow" },
     ],
   },
 ];
@@ -68,71 +71,55 @@ interface Recommendation {
   path: string;
   tagline: string;
   description: string;
+  ctaText: string;
 }
 
 const getRecommendation = (answers: Record<number, string>): Recommendation => {
-  const experience = answers[1];
   const goal = answers[2];
   const time = answers[3];
-  const budget = answers[4];
+  const learning = answers[4];
+  const speed = answers[5];
 
-  // Advanced users or business goals with high budget → Mastery
-  if (
-    (experience === "advanced" || goal === "business") &&
-    (budget === "high" || budget === "medium") &&
-    time === "high"
-  ) {
-    return {
-      course: "Agentic AI Mastery",
-      path: "/mastery",
-      tagline: "Your Perfect Match",
-      description: "Based on your goals and commitment level, our flagship 12-week Mastery program will give you everything you need to master AI automation AND build a business around it.",
-    };
-  }
-
-  // Intermediate users or scaling goals with moderate time → Accelerator
-  if (
-    (experience === "intermediate" || experience === "some") &&
-    (goal === "scale" || goal === "time") &&
-    (budget === "medium" || budget === "low")
-  ) {
-    return {
-      course: "Automation Accelerator",
-      path: "/accelerator",
-      tagline: "Great Choice",
-      description: "The 4-week Accelerator is perfect for you. You'll build production-ready systems and get personalized mentorship to take your automation skills to the next level.",
-    };
-  }
-
-  // Beginners or time-savers with low budget → Bootcamp
-  if (
-    (experience === "beginner" || experience === "some") &&
-    (budget === "low" || budget === "free")
-  ) {
+  // Fast + Live + Hands-on → Bootcamp
+  if ((speed === "fast" || learning === "live") && time !== "minimal") {
     return {
       course: "Automation Bootcamp",
       path: "/bootcamp",
       tagline: "Perfect Starting Point",
-      description: "Our 2-day Bootcamp is designed exactly for where you are. You'll build your first working automations and get a clear roadmap for what's next.",
+      description: "Our 2-day intensive Bootcamp is designed for you. You'll build your first automations fast with live support.",
+      ctaText: "Enroll Now",
     };
   }
 
-  // Free/exploring → Launchpad
-  if (budget === "free" || goal === "explore" || time === "minimal") {
+  // Career change + Service offering → Mastery
+  if (goal === "career" || goal === "service") {
     return {
-      course: "Automation Launchpad",
-      path: "/launchpad",
-      tagline: "Start Here",
-      description: "Join our free 90-minute Launchpad session. It's the perfect way to see what's possible and decide if this path is right for you.",
+      course: "Agentic AI Mastery",
+      path: "/mastery",
+      tagline: "Your Perfect Match",
+      description: "Based on your goals, our 12-week Mastery program will help you master AI automation and build a career around it.",
+      ctaText: "Apply",
     };
   }
 
-  // Default to Bootcamp
+  // Flexible + Self-paced + Busy → Accelerator
+  if (learning === "videos" || time === "minimal" || time === "moderate") {
+    return {
+      course: "Automation Accelerator",
+      path: "/accelerator",
+      tagline: "Great Choice",
+      description: "The 4-week Accelerator is perfect for your schedule. Self-paced learning with all the resources you need.",
+      ctaText: "Enroll Now",
+    };
+  }
+
+  // Default → Launchpad
   return {
-    course: "Automation Bootcamp",
-    path: "/bootcamp",
-    tagline: "Recommended For You",
-    description: "The Bootcamp gives you a solid foundation in just 2 days. It's the perfect entry point to start your automation journey.",
+    course: "Automation Launchpad",
+    path: "/launchpad",
+    tagline: "Start Here",
+    description: "Join our free 90-minute Launchpad session. It's the perfect way to see what's possible.",
+    ctaText: "Join Free",
   };
 };
 
@@ -154,9 +141,7 @@ const QuizModal = ({ open, onOpenChange }: QuizModalProps) => {
   };
 
   const handleBack = () => {
-    if (currentStep > 0) {
-      setCurrentStep((prev) => prev - 1);
-    }
+    if (currentStep > 0) setCurrentStep((prev) => prev - 1);
   };
 
   const handleReset = () => {
@@ -181,9 +166,7 @@ const QuizModal = ({ open, onOpenChange }: QuizModalProps) => {
           <DialogHeader className="mb-6">
             <DialogTitle className="text-2xl font-heading font-bold text-center">
               {showResult ? (
-                <span className="gradient-primary bg-clip-text text-transparent">
-                  Your Recommendation
-                </span>
+                <span className="gradient-primary bg-clip-text text-transparent">Based on your answers, this is your best starting point.</span>
               ) : (
                 "Find Your Perfect Path"
               )}
@@ -192,55 +175,29 @@ const QuizModal = ({ open, onOpenChange }: QuizModalProps) => {
 
           <AnimatePresence mode="wait">
             {!showResult ? (
-              <motion.div
-                key={currentStep}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Progress Bar */}
+              <motion.div key={currentStep} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
                 <div className="mb-6">
                   <div className="flex justify-between text-sm text-muted-foreground mb-2">
                     <span>Question {currentStep + 1} of {questions.length}</span>
                     <span>{Math.round(progress)}%</span>
                   </div>
                   <div className="h-2 bg-muted rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-primary"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${progress}%` }}
-                      transition={{ duration: 0.3 }}
-                    />
+                    <motion.div className="h-full bg-primary" initial={{ width: 0 }} animate={{ width: `${progress}%` }} transition={{ duration: 0.3 }} />
                   </div>
                 </div>
 
-                {/* Question */}
                 <h3 className="text-lg font-medium mb-6">{currentQuestion.question}</h3>
 
-                {/* Options */}
                 <div className="space-y-3 mb-8">
                   {currentQuestion.options.map((option) => (
                     <button
                       key={option.value}
                       onClick={() => handleAnswer(option.value)}
-                      className={`w-full p-4 rounded-xl text-left transition-all border ${
-                        answers[currentQuestion.id] === option.value
-                          ? "border-primary bg-primary/10 text-foreground"
-                          : "border-border/50 hover:border-primary/50 text-muted-foreground hover:text-foreground"
-                      }`}
+                      className={`w-full p-4 rounded-xl text-left transition-all border ${answers[currentQuestion.id] === option.value ? "border-primary bg-primary/10 text-foreground" : "border-border/50 hover:border-primary/50 text-muted-foreground hover:text-foreground"}`}
                     >
                       <div className="flex items-center gap-3">
-                        <div
-                          className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                            answers[currentQuestion.id] === option.value
-                              ? "border-primary bg-primary"
-                              : "border-muted-foreground"
-                          }`}
-                        >
-                          {answers[currentQuestion.id] === option.value && (
-                            <CheckCircle className="w-3 h-3 text-primary-foreground" />
-                          )}
+                        <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${answers[currentQuestion.id] === option.value ? "border-primary bg-primary" : "border-muted-foreground"}`}>
+                          {answers[currentQuestion.id] === option.value && <CheckCircle className="w-3 h-3 text-primary-foreground" />}
                         </div>
                         <span>{option.label}</span>
                       </div>
@@ -248,61 +205,30 @@ const QuizModal = ({ open, onOpenChange }: QuizModalProps) => {
                   ))}
                 </div>
 
-                {/* Navigation */}
                 <div className="flex justify-between">
-                  <Button
-                    variant="ghost"
-                    onClick={handleBack}
-                    disabled={currentStep === 0}
-                    className="gap-2"
-                  >
-                    <ArrowLeft className="w-4 h-4" />
-                    Back
+                  <Button variant="ghost" onClick={handleBack} disabled={currentStep === 0} className="gap-2">
+                    <ArrowLeft className="w-4 h-4" /> Back
                   </Button>
-                  <Button
-                    variant="cta"
-                    onClick={handleNext}
-                    disabled={!answers[currentQuestion.id]}
-                    className="gap-2"
-                  >
-                    {currentStep === questions.length - 1 ? "See Result" : "Next"}
-                    <ArrowRight className="w-4 h-4" />
+                  <Button variant="cta" onClick={handleNext} disabled={!answers[currentQuestion.id]} className="gap-2">
+                    {currentStep === questions.length - 1 ? "See Result" : "Next"} <ArrowRight className="w-4 h-4" />
                   </Button>
                 </div>
               </motion.div>
             ) : (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
-                className="text-center"
-              >
-                {/* Result Card */}
+              <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }} className="text-center">
                 <div className="p-6 rounded-2xl glass-card border border-primary/30 mb-6">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-sm mb-4">
-                    <Sparkles className="w-4 h-4" />
-                    {recommendation.tagline}
+                    <Sparkles className="w-4 h-4" /> {recommendation.tagline}
                   </div>
-
-                  <h3 className="text-2xl font-heading font-bold gradient-primary bg-clip-text text-transparent mb-4">
-                    {recommendation.course}
-                  </h3>
-
-                  <p className="text-muted-foreground mb-6">
-                    {recommendation.description}
-                  </p>
-
+                  <h3 className="text-2xl font-heading font-bold gradient-primary bg-clip-text text-transparent mb-4">{recommendation.course}</h3>
+                  <p className="text-muted-foreground mb-6">{recommendation.description}</p>
                   <Link to={recommendation.path} onClick={handleClose}>
                     <Button variant="cta" size="lg" className="w-full rounded-full group">
-                      Explore {recommendation.course}
-                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      {recommendation.ctaText} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                 </div>
-
-                <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
-                  Retake Quiz
-                </Button>
+                <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">Retake Quiz</Button>
               </motion.div>
             )}
           </AnimatePresence>
