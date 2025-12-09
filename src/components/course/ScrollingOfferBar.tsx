@@ -8,7 +8,7 @@ const ScrollingOfferBar = ({ messages }: ScrollingOfferBarProps) => {
   const combinedMessage = messages.join(" • ");
   
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-primary overflow-hidden">
+    <div data-offer-bar className="fixed top-0 left-0 right-0 z-[60] bg-primary overflow-hidden h-10">
       <motion.div
         animate={{ x: [0, -50 + "%"] }}
         transition={{

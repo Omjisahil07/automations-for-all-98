@@ -64,9 +64,12 @@ const Header = () => {
     }
   };
 
+  // Check if there's a scrolling offer bar on the page
+  const hasOfferBar = typeof document !== 'undefined' && document.querySelector('[data-offer-bar]');
+
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-10 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
           ? "border-b border-white/10 shadow-lg shadow-black/20" 
           : "border-b border-transparent"
