@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { CometCard } from "@/components/ui/comet-card";
 import { CountUp } from "@/components/ui/count-up";
+import { Link } from "react-router-dom";
 
 const highlights = [
   "12+ years of experience with an educational background in Engineering and Management",
@@ -150,14 +151,16 @@ const Founder = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Button
-                  variant="hero"
-                  size="lg"
-                  className="rounded-full group bg-primary text-primary-foreground hover:bg-primary/90 hover:translate-y-[-2px] transition-transform"
-                >
-                  Start Learning From Ambesh Today
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <Link to="/choose">
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="rounded-full group bg-primary text-primary-foreground hover:bg-primary/90 hover:translate-y-[-2px] transition-transform"
+                  >
+                    Start Learning From Ambesh Today
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
           </motion.div>

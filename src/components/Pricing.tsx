@@ -5,6 +5,7 @@ import { Crown, Star, Gift, Clock, Users, Trophy } from "lucide-react";
 import { CardSpotlight } from "./ui/card-spotlight";
 import { MagneticButton } from "./ui/magnetic-button";
 import { FloatingOrbs } from "./ui/floating-orbs";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   useScrollReveal();
@@ -13,8 +14,8 @@ const Pricing = () => {
     {
       title: "The Bootcamp",
       subtitle: "2-Day AI Kickstart",
-      price: "₹9,999",
-      originalPrice: "₹19,999",
+      price: "₹4,999",
+      originalPrice: "₹9,999",
       badge: "WEEKEND WARRIOR",
       icon: Clock,
       bestFor:
@@ -31,6 +32,7 @@ const Pricing = () => {
       popular: false,
       gradient: "gradient-primary",
       glowColor: "primary",
+      route: "/bootcamp",
     },
     {
       title: "Agentic AI Mastery",
@@ -54,6 +56,7 @@ const Pricing = () => {
       popular: true,
       gradient: "gradient-hero",
       glowColor: "accent",
+      route: "/mastery",
     },
     {
       title: "Automation Accelerator",
@@ -75,6 +78,7 @@ const Pricing = () => {
       popular: false,
       gradient: "gradient-accent",
       glowColor: "success",
+      route: "/accelerator",
     },
   ];
 
@@ -226,7 +230,7 @@ const Pricing = () => {
                         >
                           <Gift className="w-3 h-3 md:w-4 md:h-4 text-success" />
                           <span className="text-xs md:text-sm font-medium text-success">
-                            50% Scholarship
+                            50% OFF
                           </span>
                         </motion.div>
                       </div>
@@ -277,15 +281,17 @@ const Pricing = () => {
                       <p className="text-xs font-medium text-center mb-3 md:mb-4 gradient-accent bg-clip-text text-transparent">
                         {path.cta}
                       </p>
-                      <MagneticButton strength={0.15} className="w-full">
-                        <Button
-                          variant={path.popular ? "hero" : "cta"}
-                          className="w-full rounded-full py-3 md:py-4 text-base md:text-lg font-bold shadow-luxury hover:shadow-glow"
-                          size="default"
-                        >
-                          Choose This Path
-                        </Button>
-                      </MagneticButton>
+                      <Link to={path.route}>
+                        <MagneticButton strength={0.15} className="w-full">
+                          <Button
+                            variant={path.popular ? "hero" : "cta"}
+                            className="w-full rounded-full py-3 md:py-4 text-base md:text-lg font-bold shadow-luxury hover:shadow-glow"
+                            size="default"
+                          >
+                            Choose This Path
+                          </Button>
+                        </MagneticButton>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -304,15 +310,17 @@ const Pricing = () => {
         >
           <div className="glass-card rounded-3xl p-6 md:p-8 lg:p-12 max-w-4xl mx-auto backdrop-blur-xl border border-primary/20 shadow-luxury">
             <div className="space-y-4 md:space-y-6">
-              <MagneticButton>
-                <Button
-                  variant="hero"
-                  size="lg"
-                  className="text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-full shadow-luxury hover:shadow-glow w-full sm:w-auto"
-                >
-                  Start My AI Journey Today
-                </Button>
-              </MagneticButton>
+              <Link to="/choose">
+                <MagneticButton>
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-full shadow-luxury hover:shadow-glow w-full sm:w-auto"
+                  >
+                    Start My AI Journey Today
+                  </Button>
+                </MagneticButton>
+              </Link>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 md:space-x-8 text-sm font-medium">
                 <motion.div 
                   className="flex items-center space-x-2"

@@ -88,6 +88,13 @@ const Card = ({ id, icon: Icon, title, description, gradient }: CardProps) => (
 );
 
 const Solution = () => {
+  const scrollToDemo = () => {
+    const demoSection = document.getElementById('about');
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-8 md:py-12 lg:py-16">
       <div className="container mx-auto px-4 max-w-8xl">
@@ -122,7 +129,12 @@ const Solution = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center"
         >
-          <Button variant="cta" size="lg" className="text-base md:text-lg">
+          <Button 
+            variant="cta" 
+            size="lg" 
+            className="text-base md:text-lg"
+            onClick={scrollToDemo}
+          >
             Show Me How It Works
           </Button>
         </motion.div>
