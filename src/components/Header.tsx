@@ -79,25 +79,27 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div 
-            className="flex items-center"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <Link to="/" className="flex items-center">
             <motion.div 
-              className="w-10 h-10 rounded-lg flex items-center justify-center"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}
+              className="flex items-center"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              <img src="/1.png" className="w-6 h-6" />
+              <motion.div 
+                className="w-10 h-10 rounded-lg flex items-center justify-center"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+              >
+                <img src="/1.png" className="w-6 h-6" alt="Automation School Logo" />
+              </motion.div>
+              <div>
+                <span className="text-xl font-heading font-bold gradient-primary bg-clip-text text-transparent">
+                  Automation School™
+                </span>
+              </div>
             </motion.div>
-            <div>
-              <h1 className="text-xl font-heading font-bold gradient-primary bg-clip-text text-transparent">
-                Automation School™
-              </h1>
-            </div>
-          </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
