@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MatrixBackground } from "@/components/MatrixBackground";
 import CourseHero from "@/components/course/CourseHero";
 import CourseAudience from "@/components/course/CourseAudience";
 import CourseProblem from "@/components/course/CourseProblem";
@@ -15,7 +14,6 @@ import CourseFinalCTA from "@/components/course/CourseFinalCTA";
 const Accelerator = () => {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <MatrixBackground />
       <Header />
 
       <CourseHero
