@@ -175,17 +175,19 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button variant="cta" size="sm" className="rounded-full text-sm relative overflow-hidden group">
-                <span className="relative z-10">Start Learning</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </Button>
-            </motion.div>
+            <Link to="/choose">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button variant="cta" size="sm" className="rounded-full text-sm relative overflow-hidden group">
+                  <span className="relative z-10">Start Learning</span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                </Button>
+              </motion.div>
+            </Link>
           </motion.div>
 
           {/* Mobile Menu Toggle */}
