@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
+  const location = useLocation();
   
   const headerBg = useTransform(
     scrollY,
@@ -28,13 +31,32 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => setIsProgramsOpen(false);
+    if (isProgramsOpen) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [isProgramsOpen]);
+
+  const programs = [
+    { name: "Automation Bootcamp", path: "/bootcamp", description: "2-Day Intensive Workshop" },
+    { name: "Automation Accelerator", path: "/accelerator", description: "4-Week Program" },
+    { name: "Agentic AI Mastery", path: "/mastery", description: "12-Week Transformation" },
+    { name: "Launchpad (Free)", path: "/launchpad", description: "Free 90-Min Masterclass" },
+  ];
+
   const navItems = [
-    { name: "Courses", href: "#pricing" },
     { name: "Success Stories", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
+    if (location.pathname !== "/") {
+      window.location.href = "/" + href;
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -79,6 +101,52 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            {/* Programs Dropdown */}
+            <div className="relative">
+              <motion.button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsProgramsOpen(!isProgramsOpen);
+                }}
+                className="relative text-sm font-medium text-muted-foreground hover:text-white transition-colors px-3 py-1 group flex items-center gap-1"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                Programs
+                <ChevronDown className={`w-4 h-4 transition-transform ${isProgramsOpen ? "rotate-180" : ""}`} />
+              </motion.button>
+
+              <AnimatePresence>
+                {isProgramsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 w-72 bg-card border border-border/50 rounded-xl shadow-luxury overflow-hidden z-50"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {programs.map((program) => (
+                      <Link
+                        key={program.path}
+                        to={program.path}
+                        onClick={() => {
+                          setIsProgramsOpen(false);
+                          setIsMenuOpen(false);
+                        }}
+                        className="block px-4 py-3 hover:bg-primary/10 transition-colors border-b border-border/30 last:border-0"
+                      >
+                        <div className="font-medium text-foreground">{program.name}</div>
+                        <div className="text-xs text-muted-foreground">{program.description}</div>
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -86,7 +154,7 @@ const Header = () => {
                 className="relative text-sm font-medium text-muted-foreground hover:text-white transition-colors px-3 py-1 group"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: (index + 1) * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
                 {item.name}
@@ -142,26 +210,46 @@ const Header = () => {
         >
           <div className="border-t border-white/10 py-4 bg-background/95 backdrop-blur-xl">
             <nav className="flex flex-col space-y-4">
-              {navItems.map((item, index) => (
-                <motion.button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left text-sm font-medium text-muted-foreground hover:text-white transition-colors hover:bg-primary/20 rounded-full px-4 py-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {item.name}
-                </motion.button>
-              ))}
+              {/* Mobile Programs */}
+              <div className="space-y-2">
+                <div className="text-xs text-muted-foreground uppercase tracking-wider px-4">Programs</div>
+                {programs.map((program) => (
+                  <Link
+                    key={program.path}
+                    to={program.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block text-sm font-medium text-muted-foreground hover:text-white transition-colors hover:bg-primary/20 rounded-lg px-4 py-2"
+                  >
+                    {program.name}
+                  </Link>
+                ))}
+              </div>
+              
+              <div className="border-t border-white/10 pt-4">
+                {navItems.map((item, index) => (
+                  <motion.button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className="w-full text-left text-sm font-medium text-muted-foreground hover:text-white transition-colors hover:bg-primary/20 rounded-full px-4 py-2"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    {item.name}
+                  </motion.button>
+                ))}
+              </div>
+              
               <div className="flex flex-col space-y-2 pt-4 border-t border-white/10">
-                <Button
-                  variant="cta"
-                  size="sm"
-                  className="rounded-full w-full text-sm"
-                >
-                  Start Learning
-                </Button>
+                <Link to="/launchpad" onClick={() => setIsMenuOpen(false)}>
+                  <Button
+                    variant="cta"
+                    size="sm"
+                    className="rounded-full w-full text-sm"
+                  >
+                    Start Learning Free
+                  </Button>
+                </Link>
               </div>
             </nav>
           </div>

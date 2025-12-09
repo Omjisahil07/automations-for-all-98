@@ -1,7 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { TextHoverEffect } from "./ui/text-hover-effect";
 import {
-  Sparkles,
   Mail,
   Phone,
   MapPin,
@@ -11,16 +9,17 @@ import {
   Linkedin,
   Youtube,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     courses: [
-      { name: "Agentic AI Mastery", href: "#" },
-      { name: "The Bootcamp", href: "#" },
-      { name: "Automation Accelerator", href: "#" },
-      { name: "Free Resources", href: "#" },
+      { name: "Agentic AI Mastery", href: "/mastery" },
+      { name: "Automation Bootcamp", href: "/bootcamp" },
+      { name: "Automation Accelerator", href: "/accelerator" },
+      { name: "Launchpad (Free)", href: "/launchpad" },
     ],
     company: [
       { name: "About Us", href: "#" },
@@ -89,12 +88,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.courses.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
