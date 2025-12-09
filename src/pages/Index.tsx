@@ -2,9 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import NewEra from "@/components/NewEra";
-import TargetAudience from "@/components/TargetAudience";
+import MicroProof from "@/components/MicroProof";
 import Problem from "@/components/Problem";
+import WhyThisMatters from "@/components/WhyThisMatters";
 import Solution from "@/components/Solution";
+import TargetAudience from "@/components/TargetAudience";
+import DemoMoment from "@/components/DemoMoment";
 import Testimonials from "@/components/Testimonials";
 import CourseOffering from "@/components/CourseOffering";
 import Pricing from "@/components/Pricing";
@@ -31,9 +34,12 @@ const Index = () => {
         
         <div id="about">
           <NewEra />
-          <TargetAudience />
+          <MicroProof />
           <Problem />
+          <WhyThisMatters />
           <Solution />
+          <TargetAudience />
+          <DemoMoment />
         </div>
         
         <SectionDivider variant="dots" />
